@@ -1,51 +1,24 @@
 ﻿# 02 - Linux Administration
 
 ## Purpose
-Build a practical Linux operations chapter for daily systems administration.
+This section serves as a practical Linux administration field guide for day-to-day systems operations in a mixed enterprise environment.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Operational Focus
+- Service management
+- Networking diagnostics
+- Storage and filesystem administration
+- Logging and troubleshooting
+- Security controls
+- Task automation
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Recommended Usage
+Use these documents as a working admin handbook. Update them with commands, validation steps, and lessons learned from real environments.
 
-## Core Commands
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Service Management
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Networking
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Storage
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Logging
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Security
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Automation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Files
+- `core-commands.md`
+- `services.md`
+- `networking.md`
+- `storage.md`
+- `logging.md`
+- `security.md`
+- `automation.md`

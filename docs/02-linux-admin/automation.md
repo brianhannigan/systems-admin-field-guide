@@ -1,41 +1,53 @@
 ﻿# Automation
 
 ## Purpose
-Document task automation patterns for Linux admins.
+Document basic Linux automation patterns that save time and improve consistency.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Bash Script Structure
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+```
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Common Use Cases
+- Service health checks
+- Disk usage reporting
+- Package update checks
+- Log collection
+- Backup verification
 
-## Bash Basics
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Example: Health Check Script
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-## Cron
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+echo "=== Hostname ==="
+hostname
 
-## Health Checks
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+echo "=== Uptime ==="
+uptime
 
-## Update Scripts
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+echo "=== Disk Usage ==="
+df -h
+
+echo "=== Failed Services ==="
+systemctl --failed || true
+```
+
+## Cron Basics
+```bash
+crontab -l
+crontab -e
+```
+
+## Automation Rules
+- Log all meaningful actions
+- Fail safely
+- Validate before changing production settings
+- Prefer idempotent checks when possible
 
 ## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+- Script runs without syntax errors
+- Output is readable
+- Failure conditions are obvious
+- Results are logged or visible

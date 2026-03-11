@@ -1,41 +1,29 @@
 ﻿# Modules
 
 ## Purpose
-Describe reusable Terraform design patterns.
+Explain how modules improve consistency and reuse in infrastructure code.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Why Use Modules
+Modules reduce duplication and standardize common resource patterns.
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Typical Module Elements
+- `main.tf`
+- `variables.tf`
+- `outputs.tf`
 
-## Why Modules
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Example Use Cases
+- Standard VM deployment
+- Standard NSG pattern
+- Reusable resource group layout
+- Shared storage account configuration
 
-## Inputs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Benefits
+- reuse
+- consistency
+- easier maintenance
+- clearer review boundaries
 
-## Outputs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Structure
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Versioning
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- module inputs are documented
+- outputs are useful
+- multiple deployments use the same standard pattern

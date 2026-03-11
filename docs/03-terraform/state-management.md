@@ -1,41 +1,37 @@
 ﻿# State Management
 
 ## Purpose
-Document Terraform state concepts and operational risks.
+Document how Terraform state works and why careless handling can break deployments.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Why State Matters
+Terraform uses state to remember what resources it manages. If state is lost, corrupted, or split incorrectly, Terraform can drift from reality.
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Key Concepts
+- Local state file: `terraform.tfstate`
+- Remote backend: safer for teams
+- Locking: prevents simultaneous conflicting changes
+- Drift: when real infrastructure differs from Terraform state
 
-## Local State
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Common Commands
+```bash
+terraform state list
+terraform state show <resource>
+terraform refresh
+```
 
-## Remote State
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Operational Risks
+- Editing state manually without a backup
+- Running Terraform from multiple copies of the same codebase
+- No remote locking in a team environment
+- Importing resources poorly
 
-## Locking
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Safe Practices
+- Back up state before risky work
+- Use remote state for shared environments
+- Review drift before applying fixes
+- Avoid casual manual changes in the cloud portal
 
-## Drift
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Recovery
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- state file exists and is healthy
+- resources in state match actual infrastructure
+- no unexplained drift exists

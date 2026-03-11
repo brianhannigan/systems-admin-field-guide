@@ -1,41 +1,42 @@
 ﻿# Azure Examples
 
 ## Purpose
-Track practical Azure deployment examples with Terraform.
+Provide small Azure deployment patterns that are easy to understand and validate.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Resource Group Example
+```hcl
+provider "azurerm" {
+  features {}
+}
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+resource "azurerm_resource_group" "rg" {
+  name     = "rg-sysadmin-field-guide"
+  location = "East US"
+}
+```
 
-## Resource Groups
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Virtual Network Example
+```hcl
+resource "azurerm_virtual_network" "vnet" {
+  name                = "vnet-sysadmin-lab"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  address_space       = ["10.10.0.0/16"]
+}
+```
 
-## VNets
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## VMs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## NSGs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Subnet Example
+```hcl
+resource "azurerm_subnet" "subnet" {
+  name                 = "subnet-app"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["10.10.1.0/24"]
+}
+```
 
 ## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+- resources appear in Azure
+- naming is consistent
+- CIDR ranges are correct
+- plan output matches intent

@@ -1,41 +1,14 @@
 ﻿# 03 - Terraform
 
 ## Purpose
-Build a practical Terraform learning path for infrastructure administration.
+This section provides a practical Terraform guide for infrastructure administration with emphasis on Azure deployment patterns and operational safety.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Operational Focus
+- Core Terraform concepts
+- State management
+- Reusable modules
+- Azure deployment examples
+- Troubleshooting failed plans and applies
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
-
-## Fundamentals
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## State Management
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Modules
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Azure Examples
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Troubleshooting
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Recommended Usage
+Use these docs to understand how infrastructure is declared, planned, deployed, validated, and maintained over time.

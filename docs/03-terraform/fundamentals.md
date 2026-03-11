@@ -1,41 +1,50 @@
 ﻿# Terraform Fundamentals
 
 ## Purpose
-Explain the core building blocks of Terraform.
+Capture the core Terraform concepts needed to read, modify, and safely apply infrastructure code.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Concepts
+- **Provider**: connects Terraform to a platform such as Azure
+- **Resource**: infrastructure object being managed
+- **Variable**: input value
+- **Output**: exported value after deployment
+- **Module**: reusable group of resources
+- **State**: Terraform's record of managed infrastructure
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Basic Workflow
+```bash
+terraform init
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
+```
 
-## Providers
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Example Structure
+```hcl
+terraform {
+  required_version = ">= 1.5.0"
+}
 
-## Resources
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+provider "azurerm" {
+  features {}
+}
 
-## Variables
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+resource "azurerm_resource_group" "rg" {
+  name     = "rg-sysadmin-lab"
+  location = "East US"
+}
+```
 
-## Outputs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Admin Mindset
+Before applying changes:
+- read the code
+- run `terraform fmt`
+- run `terraform validate`
+- read the plan output carefully
+- confirm impact before `apply`
 
-## Plan and Apply
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- plan output matches expectation
+- resource appears in Azure after apply
+- state updates cleanly

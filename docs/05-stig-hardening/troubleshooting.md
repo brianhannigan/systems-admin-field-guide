@@ -1,41 +1,47 @@
 ﻿# STIG Troubleshooting
 
 ## Purpose
-Document a repeatable STIG troubleshooting workflow.
+Provide a repeatable workflow for diagnosing systems that broke after hardening.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Workflow
+1. Identify what changed
+2. Confirm which service or function is broken
+3. Review service state
+4. Review logs
+5. Compare new settings to previous baseline
+6. Validate permissions, auth, SELinux, and firewall behavior
+7. Apply the smallest safe corrective action
+8. Re-test and document evidence
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Commands to Start With
+```bash
+systemctl status <service>
+journalctl -xe
+journalctl -u <service> -n 100 --no-pager
+getenforce
+ausearch -m avc -ts recent
+firewall-cmd --list-all
+ss -tulpn
+ls -l /path/to/file
+```
 
-## Change Review
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Questions to Ask
+- What exact STIG setting changed?
+- Did remote access break or only app behavior?
+- Did permissions change?
+- Did the firewall change?
+- Did authentication policy change?
+- Did SELinux start blocking a valid action?
 
-## Service Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Safe Fix Pattern
+- confirm root cause
+- apply minimal corrective change
+- document why the change is needed
+- preserve compliance where possible
+- record any required exception
 
-## Log Review
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Rollback Thinking
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Evidence Collection
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- service starts cleanly
+- logs are healthy
+- access works as intended
+- evidence is documented

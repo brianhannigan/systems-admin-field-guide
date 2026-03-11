@@ -1,46 +1,53 @@
 ﻿# Storage
 
 ## Purpose
-Manage disks, filesystems, and LVM safely.
+Document disk, filesystem, and LVM operations needed by a systems administrator.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Disk and Filesystem Inventory
+```bash
+lsblk
+blkid
+df -h
+du -sh /var/*
+mount
+cat /etc/fstab
+```
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Disk Usage Troubleshooting
+```bash
+df -h
+du -sh /*
+find /var/log -type f -size +100M
+find / -xdev -type f -size +500M 2>/dev/null
+```
 
-## Disk Inventory
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## LVM Commands
+```bash
+pvs
+vgs
+lvs
+pvcreate /dev/sdb
+vgcreate data_vg /dev/sdb
+lvcreate -L 10G -n app_lv data_vg
+mkfs.xfs /dev/data_vg/app_lv
+mount /dev/data_vg/app_lv /mnt/app
+```
 
-## Filesystem Usage
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Expansion Example
+```bash
+lvextend -r -L +5G /dev/data_vg/app_lv
+```
 
-## Mounts
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## LVM
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Expansion
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Common Problems
+- Filesystem full
+- Log growth consuming space
+- Mount missing after reboot
+- Wrong fstab entry
+- LVM not extended after disk growth
 
 ## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+```bash
+df -h
+mount | grep /mnt/app
+lsblk
+```

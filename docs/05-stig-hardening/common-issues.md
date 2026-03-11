@@ -1,41 +1,35 @@
 ﻿# Common STIG Issues
 
 ## Purpose
-Track the most common breakpoints after applying STIGs.
+Track the most frequent breakpoints seen after hardening.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## SSH Access Problems
+- remote login fails
+- root login blocked
+- key-based auth misconfigured
+- approved crypto settings break older clients
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Service Account Problems
+- app runs under an account that no longer has required privileges
+- scheduled jobs stop working
+- automation scripts fail silently
 
-## SSH
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## File Permission Problems
+- app cannot read config file
+- web service cannot write logs or temp files
+- startup scripts fail due to restricted permissions
 
-## Service Accounts
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Logging and Auditing Problems
+- app fills disk with logs
+- audit rules create noise
+- required log paths are inaccessible
 
-## File Permissions
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Application Breakage
+- daemon starts but app fails
+- service appears active but endpoint is dead
+- dependencies were not considered before hardening
 
-## Logging
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Application Failures
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- failed behavior mapped to actual control changes
+- log evidence captured
+- service retested after fix

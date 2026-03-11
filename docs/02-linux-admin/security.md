@@ -1,46 +1,55 @@
 ﻿# Security
 
 ## Purpose
-Capture Linux security basics relevant to admin work.
+Track Linux security controls most relevant to admin work in enterprise and regulated environments.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
-
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
-
-## Users
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## sudo
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## User and sudo Basics
+```bash
+id username
+getent passwd username
+sudo -l
+visudo
+```
 
 ## Permissions
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+```bash
+ls -l
+chmod 600 /path/to/file
+chown root:root /path/to/file
+```
 
-## SSH
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## SSH Hardening Checks
+```bash
+cat /etc/ssh/sshd_config
+sshd -t
+systemctl restart sshd
+```
 
-## SELinux
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## SELinux Basics
+```bash
+getenforce
+sestatus
+ausearch -m avc -ts recent
+restorecon -Rv /var/www/html
+```
 
-## firewalld
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## firewalld Basics
+```bash
+firewall-cmd --state
+firewall-cmd --list-all
+firewall-cmd --add-service=https --permanent
+firewall-cmd --reload
+```
 
+## Common Security Failure Points
+- SSH config breaks remote access
+- Wrong file permissions stop service startup
+- SELinux denies app behavior
+- Firewall rule blocks application traffic
+- Overly broad sudo access
+
+## Validation
+- Access works as intended
+- Logs show no new denials
+- Ports are reachable only as expected
+- Permissions match policy

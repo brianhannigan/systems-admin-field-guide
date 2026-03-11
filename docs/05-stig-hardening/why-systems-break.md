@@ -1,41 +1,31 @@
 ﻿# Why Systems Break After Hardening
 
 ## Purpose
-Capture why security changes often create operational failures.
+Document why STIG implementation often creates outages or unexpected behavior.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Common Reasons
+1. **Permissions get tighter**
+   - apps lose access to files, paths, or sockets
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+2. **Authentication rules change**
+   - service accounts or remote automation stop working
 
-## Permissions
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+3. **Services are disabled**
+   - required but insecure-by-default services may be turned off
 
-## Services
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+4. **SSH settings change**
+   - root login, ciphers, or auth methods may be restricted
 
-## Authentication
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+5. **Auditing increases overhead**
+   - logging or auditing changes can affect performance or app behavior
 
-## Auditing
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+6. **SELinux or firewall rules become stricter**
+   - legitimate traffic or actions may be denied
 
-## Dependencies
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Operational Lesson
+A secure baseline is not just a checkbox. It must be validated against the real workload.
 
+## Validation
+- each control change is understood
+- dependencies were reviewed
+- service behavior is tested after change

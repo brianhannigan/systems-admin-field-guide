@@ -1,46 +1,59 @@
 ﻿# Networking
 
 ## Purpose
-Troubleshoot Linux networking issues.
+Provide a repeatable approach for diagnosing Linux connectivity issues.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Interface and Address Checks
+```bash
+ip addr
+ip link
+nmcli device status
+hostname -I
+```
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Routing and DNS
+```bash
+ip route
+cat /etc/resolv.conf
+nslookup example.com
+dig example.com
+```
 
-## Interfaces
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Port and Socket Checks
+```bash
+ss -tulpn
+ss -anp
+netstat -tulpn
+```
 
-## Routes
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Connectivity Tests
+```bash
+ping 8.8.8.8
+ping google.com
+curl -I https://example.com
+traceroute google.com
+```
 
-## Ports
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Firewall Checks
+```bash
+firewall-cmd --state
+firewall-cmd --list-all
+firewall-cmd --list-ports
+```
 
-## DNS
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Firewall
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Troubleshooting Workflow
+1. Confirm the interface is up
+2. Confirm the IP address is correct
+3. Confirm the route table is sane
+4. Test raw IP connectivity
+5. Test DNS resolution
+6. Check local listening ports
+7. Check firewall rules
+8. Validate application response
 
 ## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+- Interface is up
+- IP and route are correct
+- DNS resolves
+- Port is listening
+- Application responds

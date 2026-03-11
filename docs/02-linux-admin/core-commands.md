@@ -1,46 +1,60 @@
 ﻿# Core Commands
 
 ## Purpose
-Collect the Linux commands needed most often.
+Capture the Linux commands most useful for administration, troubleshooting, patching, and recovery work.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Filesystem Navigation
+```bash
+pwd
+ls -lah
+cd /path/to/location
+tree
+find /etc -name "*.conf"
+```
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Search and Text Processing
+```bash
+grep -R "listen" /etc
+grep -i error /var/log/messages
+awk '{print $1}'
+sed -n '1,20p' /etc/ssh/sshd_config
+```
 
-## Filesystem
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## File Operations
+```bash
+cp source.txt backup.txt
+mv oldname newname
+rm -f temp.txt
+mkdir -p /opt/app/logs
+tar -czf backup.tar.gz /etc
+```
 
-## Search
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Permissions and Ownership
+```bash
+chmod 640 file.txt
+chown root:root file.txt
+ls -l
+umask
+```
 
-## Processes
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Process Inspection
+```bash
+ps aux
+top
+htop
+pgrep sshd
+kill -9 <pid>
+```
 
-## Packages
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Package Management (RHEL)
+```bash
+dnf check-update
+dnf update -y
+dnf install vim -y
+rpm -qa | sort
+```
 
-## Permissions
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Examples
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation Checklist
+- Confirm command output before making changes
+- Document destructive commands before running them
+- Verify package changes in logs after updates

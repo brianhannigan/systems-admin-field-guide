@@ -1,41 +1,34 @@
 ﻿# Compliance Workflow
 
 ## Purpose
-Capture the workflow from baseline to validation and evidence.
+Track the operational workflow for implementing and validating hardening changes.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Workflow Stages
+1. Prepare
+2. Review baseline requirements
+3. Identify affected systems and applications
+4. Apply changes in a controlled sequence
+5. Validate technical functionality
+6. Validate security compliance
+7. Record evidence
+8. Track exceptions
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Evidence to Capture
+- screenshots or config output
+- command results
+- service status
+- scan results
+- ticket references
+- exception approvals
 
-## Preparation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Implementation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Exception Handling
+When a setting cannot be applied without breaking a mission-critical function:
+- document the reason
+- identify risk
+- propose compensating controls
+- obtain formal approval if required
 
 ## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Exceptions
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Documentation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+- baseline implemented or exception recorded
+- system remains operational
+- evidence supports audit review

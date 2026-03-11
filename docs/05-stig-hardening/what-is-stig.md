@@ -1,36 +1,31 @@
 ﻿# What STIGs Are
 
 ## Purpose
-Explain STIG baselines and their role in secure environments.
+Explain what STIGs are and why they matter in secure environments.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Definition
+STIG stands for **Security Technical Implementation Guide**. STIGs are detailed configuration baselines published to improve system security and reduce attack surface.
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Why They Matter
+STIGs are used to:
+- enforce security baselines
+- reduce insecure defaults
+- strengthen authentication and auditing
+- standardize hardening expectations
 
-## Purpose
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## What They Usually Affect
+- passwords and authentication
+- SSH / remote access
+- auditing and logging
+- file permissions
+- service configuration
+- account policies
+- network exposure
 
-## Scope
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Admin Reality
+STIGs improve security, but they also create operational risk if applied without testing dependencies and service behavior.
 
-## Platform Coverage
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Operational Impact
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- baseline is understood before implementation
+- affected systems and apps are identified
+- change scope is documented

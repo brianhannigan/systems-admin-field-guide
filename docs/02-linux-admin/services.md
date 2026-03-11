@@ -1,36 +1,58 @@
 ﻿# Service Management
 
 ## Purpose
-Manage and troubleshoot services with systemd.
+Document how to manage and troubleshoot services using `systemd`.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Commands
+```bash
+systemctl status sshd
+systemctl restart sshd
+systemctl stop firewalld
+systemctl start firewalld
+systemctl enable chronyd
+systemctl disable telnet.socket
+systemctl list-units --type=service
+systemctl --failed
+```
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Failed Service Workflow
+1. Check service state:
+   ```bash
+   systemctl status <service>
+   ```
+2. Review recent logs:
+   ```bash
+   journalctl -u <service> -n 100 --no-pager
+   ```
+3. Check full boot/session failures:
+   ```bash
+   journalctl -xe
+   ```
+4. Confirm config syntax if the service supports it
+5. Restart the service
+6. Re-check status and validate the port or application response
 
-## systemctl Basics
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Restart Patterns
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Failed Services
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Common Failure Causes
+- Invalid configuration file
+- Missing dependency
+- Port already in use
+- Permission denied
+- SELinux blocking action
+- Service account issue
 
 ## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+```bash
+systemctl is-active <service>
+ss -tulpn
+curl -I http://localhost
+```
 
+## Example: NGINX Recovery
+```bash
+systemctl status nginx
+journalctl -u nginx -n 50 --no-pager
+nginx -t
+systemctl restart nginx
+ss -tulpn | grep :80
+curl -I http://localhost
+```

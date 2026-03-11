@@ -1,41 +1,39 @@
 ﻿# Logging
 
 ## Purpose
-Use logs for diagnosis and validation.
+Provide a practical log review workflow for service failures, upgrades, and security validation.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Primary Log Tools
+```bash
+journalctl
+tail -f /var/log/messages
+tail -f /var/log/secure
+dmesg
+```
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
-
-## journalctl
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## System Logs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## App Logs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Audit Logs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## journalctl Examples
+```bash
+journalctl -u sshd
+journalctl -u nginx -n 50 --no-pager
+journalctl --since "1 hour ago"
+journalctl -p err -b
+```
 
 ## Log Review Workflow
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+1. Identify the affected service or subsystem
+2. Pull recent service logs
+3. Review boot or kernel errors if needed
+4. Check authentication logs for access failures
+5. Correlate timestamps with user actions or patch events
 
+## Useful Logs
+- `/var/log/messages`
+- `/var/log/secure`
+- `/var/log/audit/audit.log`
+- Application-specific log paths
+
+## Validation
+- Error source identified
+- Event timeline documented
+- Fix applied
+- Healthy logs confirmed after change
