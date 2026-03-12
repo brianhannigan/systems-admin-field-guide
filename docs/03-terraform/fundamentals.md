@@ -1,23 +1,22 @@
-﻿# Terraform Fundamentals
+# Terraform Fundamentals
 
 ## Purpose
-This document explains Terraform from an infrastructure operator's perspective: how to read it, review it safely, predict impact, and avoid common mistakes.
+This document explains Terraform from an infrastructure operator's point of view: how to read it, review it safely, predict its impact, and avoid common mistakes.
 
 ## Why Terraform Matters
-Terraform turns infrastructure changes into reviewable code. For systems administration and platform work, that means:
+Terraform makes infrastructure changes visible before they happen. That is valuable because it allows:
 
-- changes can be planned before execution
-- intent is visible in code
-- review is more disciplined
-- environments can be more consistent
-- drift becomes easier to identify
+- review before execution
+- repeatable infrastructure creation
+- clearer change intent
+- reduced manual drift
+- better auditability of changes
 
 ## Core Concepts
 
 ### Provider
-The provider connects Terraform to a platform such as Azure.
+A provider connects Terraform to a platform such as Azure.
 
-Example:
 ```hcl
 provider "azurerm" {
   features {}
@@ -25,9 +24,8 @@ provider "azurerm" {
 ```
 
 ### Resource
-A resource is an infrastructure object Terraform manages.
+A resource is an object Terraform manages.
 
-Example:
 ```hcl
 resource "azurerm_resource_group" "rg" {
   name     = "rg-sysadmin-lab"
@@ -36,9 +34,8 @@ resource "azurerm_resource_group" "rg" {
 ```
 
 ### Variable
-Variables are inputs used to make code reusable and environment-aware.
+Variables make infrastructure configurable and reusable.
 
-Example:
 ```hcl
 variable "location" {
   type    = string
@@ -47,9 +44,8 @@ variable "location" {
 ```
 
 ### Output
-Outputs expose useful values after deployment.
+Outputs expose useful results after apply.
 
-Example:
 ```hcl
 output "resource_group_name" {
   value = azurerm_resource_group.rg.name
@@ -57,18 +53,18 @@ output "resource_group_name" {
 ```
 
 ### Module
-A module is a reusable collection of Terraform code.
+A module is a reusable bundle of Terraform code.
 
-Common use cases:
-- standard VM pattern
-- standard NSG pattern
-- resource group + tagging pattern
+Typical module use cases:
+- standard VM build
+- NSG pattern
 - subnet pattern
+- tagging standard
 
 ### State
-Terraform state is Terraform's memory of what it manages. It is operationally sensitive and should be handled carefully.
+State is Terraform's record of what it manages. It is operationally sensitive and must be treated carefully.
 
-## Basic Workflow
+## Standard Workflow
 ```bash
 terraform fmt
 terraform validate
@@ -79,49 +75,74 @@ terraform destroy
 ```
 
 ## Operator Review Workflow
-Before applying any change:
 
-1. Read the code
-2. Identify what resources are affected
-3. Confirm the target subscription or environment
-4. Confirm variables and tfvars inputs
-5. Run `terraform fmt`
-6. Run `terraform validate`
-7. Run `terraform plan`
-8. Read the plan carefully
-9. Only apply after the plan matches expectation
+### 1. Read the Code
+Understand:
+- provider
+- target environment
+- variables
+- modules
+- resources affected
 
-## What to Look for in a Plan
-When reading `terraform plan`, verify:
+### 2. Validate Structure
+```bash
+terraform fmt
+terraform validate
+```
 
-- what is being created
-- what is being changed in place
-- what is being destroyed
-- whether names, regions, and sizes are correct
-- whether networking changes are broader than expected
-- whether identity or access changes are included
-- whether tags or standard settings are drifting
+### 3. Initialize Providers and Backend
+```bash
+terraform init
+```
 
-## Safe Admin Mindset
-Do not treat Terraform like a magic deploy button.
+### 4. Review the Plan
+```bash
+terraform plan
+```
+
+### 5. Read the Plan Carefully
+Check:
+- creates
+- in-place updates
+- destroys
+- naming
+- region
+- networking
+- tags
+- identity changes
+- unexpected deletes
+
+### 6. Apply Only After the Plan Makes Sense
+```bash
+terraform apply
+```
+
+### 7. Validate in Terraform and in Azure
+```bash
+terraform state list
+terraform output
+```
+
+Then confirm the real environment matches expectation.
+
+## Admin Mindset
+Do not treat Terraform as a “click deploy” tool.
 
 Use this mindset:
-
-- code first
+- understand before apply
 - plan before apply
-- understand before execute
-- prefer small changes
-- watch for drift
 - protect state
+- use small, reviewable changes
+- assume drift exists until disproven
 - validate after apply
 
-## Common Admin Mistakes
+## Common Mistakes
 - applying without reading the plan
-- working in the wrong subscription or environment
-- using stale local code
-- changing cloud resources manually, then forgetting drift exists
-- treating state casually
-- assuming “no syntax error” means “safe change”
+- working in the wrong environment
+- stale code or stale variables
+- manual portal changes causing drift
+- careless state handling
+- assuming validate means safe
 
 ## Small Azure Example
 ```hcl
@@ -139,55 +160,15 @@ resource "azurerm_resource_group" "rg" {
 }
 ```
 
-## Validation Before Apply
-```bash
-terraform fmt
-terraform validate
-terraform init
-terraform plan
-```
-
-## Validation After Apply
-After a successful apply, verify in both Terraform and Azure:
-
-```bash
-terraform state list
-terraform output
-```
-
-Then validate in Azure:
-- resource exists in expected resource group
-- region is correct
-- naming is correct
-- tags are correct
-- no unexpected side effects occurred
-
-## Reading Terraform Like an Admin
-When you open Terraform code, answer these questions:
-
-- What provider is being used?
-- What subscription or environment is this targeting?
-- What resources are defined here?
-- What variables control behavior?
-- Are modules hiding important complexity?
-- Where is state stored?
-- What would happen if this ran today?
-
 ## Review Checklist
-- provider and environment understood
+- provider understood
+- environment understood
 - variables reviewed
-- plan reviewed carefully
+- modules reviewed
+- plan reviewed
 - create/change/destroy actions understood
-- state location understood
-- validation plan exists after apply
-
-## Example Admin Notes to Capture in This Repo
-As you gain experience, update this document with:
-- actual plan patterns from your environment
-- safe review habits your team uses
-- known module conventions
-- common drift situations
-- mistakes that caused rework
+- state location known
+- post-apply validation steps known
 
 ## Quick Reference
 ```bash

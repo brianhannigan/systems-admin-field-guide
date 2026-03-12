@@ -1,30 +1,19 @@
-﻿# STIG Troubleshooting
+# STIG Troubleshooting
 
 ## Purpose
-This document provides a repeatable workflow for diagnosing systems that break after hardening changes, policy tightening, or baseline enforcement.
+This document provides a repeatable workflow for diagnosing systems that break after STIG hardening, baseline tightening, or security policy enforcement.
 
 ## Why This Matters
-STIG implementation often improves security while introducing operational friction. Services may stop working not because the system is “bad,” but because a dependency, permission, access path, or policy assumption changed.
+STIG changes often improve security while breaking assumptions that applications, admins, or automation previously relied on. Good troubleshooting here is not guessing. It is disciplined validation of what changed, what failed, and what minimal corrective action restores function safely.
 
-A strong administrator should be able to answer:
+## Primary Triage Questions
+Before making any change, answer these questions:
 
-- what changed
-- what broke
-- why it broke
-- how to restore function safely
-- how to preserve compliance or document exceptions
-
-## Core Troubleshooting Workflow
-
-1. Identify exactly what changed
-2. Identify exactly what broke
-3. Confirm whether the issue is service, access, or application behavior
-4. Review logs and denials
-5. Compare before/after settings if possible
-6. Validate permissions, authentication, SELinux, and firewall behavior
-7. Apply the smallest safe corrective action
-8. Re-test functionality
-9. Capture evidence and determine whether an exception is required
+- What STIG control or hardening action changed?
+- What exact function broke?
+- Did access break, did the service fail, or did the app become partially degraded?
+- Is this a permissions issue, authentication issue, SELinux issue, firewall issue, or dependency issue?
+- Is the break local only, remote only, or both?
 
 ## First Commands to Run
 ```bash
@@ -39,25 +28,77 @@ ls -l /path/to/file
 id <service-account>
 ```
 
-## What to Ask First
-- What hardening change was applied?
-- Was the system working before the change?
-- Did the issue affect remote access, application behavior, or both?
-- Did the service fail to start or start incorrectly?
-- Did logging, file access, or network reachability change?
-- Did authentication or account policy change?
+## Standard Troubleshooting Workflow
 
-## Most Common Break Categories
+### 1. Identify the Change
+Determine exactly what was hardened:
+- SSH config
+- PAM or auth policy
+- file permissions
+- service account restrictions
+- audit settings
+- firewall rules
+- SELinux context or enforcement behavior
 
-### 1. SSH / Remote Access Breakage
-Typical causes:
-- `sshd_config` settings changed
-- root login disabled unexpectedly
-- old auth method no longer allowed
-- firewall port rule removed or changed
-- crypto restrictions affect older clients
+### 2. Identify the Failed Behavior
+Classify the symptom:
+- remote access failure
+- service fails to start
+- service starts but app is broken
+- app loses write access
+- logs show denials or syntax errors
+- expected traffic no longer reaches the host
 
-Useful commands:
+### 3. Review Service State and Logs
+```bash
+systemctl status <service>
+journalctl -u <service> -n 100 --no-pager
+journalctl -xe
+```
+
+### 4. Validate Access Path
+Check whether the failure is local, remote, or both:
+```bash
+ss -tulpn
+curl -I http://localhost
+curl -I http://127.0.0.1
+```
+
+### 5. Validate Permissions and Service Identity
+```bash
+id <service-account>
+ls -l /path/to/file
+namei -l /path/to/file
+sudo -u <service-account> test -r /path/to/file && echo readable
+```
+
+### 6. Validate SELinux and Firewall
+```bash
+getenforce
+ausearch -m avc -ts recent
+firewall-cmd --list-all
+```
+
+### 7. Apply the Smallest Safe Fix
+Do not weaken everything at once. Correct the actual blocking condition, then retest.
+
+### 8. Capture Evidence
+Record:
+- what changed
+- what broke
+- what command proved it
+- what fixed it
+- what validated recovery
+- whether an exception is needed
+
+## Common Break/Fix Scenarios
+
+### Scenario 1: SSH Access Breaks After Hardening
+
+#### Symptom
+Users cannot connect remotely after hardening is applied.
+
+#### Triage
 ```bash
 systemctl status sshd
 journalctl -u sshd -n 100 --no-pager
@@ -66,164 +107,116 @@ ss -tulpn | grep :22
 firewall-cmd --list-all
 ```
 
-### 2. Permission or Ownership Breakage
-Typical causes:
-- service account lost access to config, temp, PID, or log path
-- tighter file mode broke app startup
-- inherited path permissions prevent execution or reads
+#### Common Causes
+- invalid `sshd_config`
+- root login disabled unexpectedly
+- key-based auth assumptions changed
+- crypto restrictions break older clients
+- firewall no longer allows SSH
+- SELinux denial for nonstandard config path
 
-Useful commands:
+#### Validation
+- SSH daemon is active
+- config test passes
+- port 22 is listening
+- intended login path works
+- logs are clean after restart
+
+### Scenario 2: Service Fails After Permissions Tighten
+
+#### Symptom
+A service that previously worked now fails on restart.
+
+#### Triage
 ```bash
-ls -l /path/to/file
-namei -l /path/to/file
+systemctl status <service>
+journalctl -u <service> -n 100 --no-pager
+ls -l /path/to/config
+namei -l /path/to/config
 id <service-account>
-sudo -u <service-account> test -r /path/to/file && echo readable
 ```
 
-### 3. SELinux Denials
-Typical causes:
-- app moved to nonstandard path
-- web service needs content context restored
-- daemon attempts action outside allowed type behavior
+#### Common Causes
+- service account can no longer read config
+- parent directory permissions block traversal
+- runtime path is not writable
+- log or PID file location is too restrictive
 
-Useful commands:
+#### Validation
+- service account can access required path
+- service starts cleanly
+- logs no longer show permission errors
+
+### Scenario 3: SELinux Denial After App Path Change
+
+#### Symptom
+Service starts incorrectly or application behavior fails even though Unix permissions look correct.
+
+#### Triage
 ```bash
 getenforce
-sestatus
 ausearch -m avc -ts recent
 restorecon -Rv /path/to/content
 ```
 
-### 4. Firewall / Network Restriction
-Typical causes:
-- required port no longer allowed
-- zone assignment changed
-- service binds correctly but path is blocked
+#### Common Causes
+- content moved to nonstandard path
+- file context not restored
+- app behavior exceeds allowed type policy
 
-Useful commands:
-```bash
-firewall-cmd --list-all
-firewall-cmd --list-ports
-ss -tulpn
-curl -I http://localhost
-```
+#### Validation
+- AVC denials stop appearing
+- app behaves normally
+- corrective action is documented
 
-### 5. Service Account / Auth Policy Breakage
-Typical causes:
-- account restrictions changed
-- password rules affect service startup
-- PAM or login policy blocks automation or access
+### Scenario 4: Service Is Active but Users Still Cannot Reach It
 
-Useful checks:
-- service unit account
-- PAM changes
-- authentication logs
-- lockout or shell restrictions
+#### Symptom
+`systemctl` shows active, but users still report outage.
 
-## Example Scenario: SSH Breaks After Hardening
-
-### Symptom
-Users cannot connect after a hardening update.
-
-### Workflow
-```bash
-systemctl status sshd
-journalctl -u sshd -n 100 --no-pager
-sshd -t
-ss -tulpn | grep :22
-firewall-cmd --list-all
-```
-
-### Likely Causes
-- invalid SSH configuration
-- stricter auth settings
-- firewall rule changed
-- user access assumptions invalidated
-
-### Safe Response
-- confirm exact config error
-- restore a working access method
-- document which control caused impact
-- retest with intended auth path
-
-## Example Scenario: Web Service Starts but Site Is Broken
-
-### Symptom
-Service is active, but the application does not function correctly.
-
-### Workflow
-```bash
-systemctl status nginx
-journalctl -u nginx -n 100 --no-pager
-ls -l /var/www/html
-getenforce
-ausearch -m avc -ts recent
-curl -I http://localhost
-```
-
-### Likely Causes
-- content path permission problem
-- SELinux context issue
-- log or temp path write restriction
-- app dependency denied access
-
-## Example Scenario: App Fails After Permission Tightening
-
-### Symptom
-A service fails on restart after a security baseline is applied.
-
-### Workflow
+#### Triage
 ```bash
 systemctl status <service>
-journalctl -u <service> -n 100 --no-pager
-ls -l /path/to/app/config
-id <service-account>
-namei -l /path/to/app/config
+ss -tulpn
+curl -I http://localhost
+firewall-cmd --list-all
 ```
 
-### Likely Causes
-- app user cannot read config
-- app user cannot write runtime directory
-- inherited parent directory permission changed
+#### Common Causes
+- firewall blocks traffic
+- service bound only to localhost
+- upstream dependency broken
+- health path works locally but not remotely
 
-## Safe Fix Pattern
-Use the smallest safe corrective action that restores required function.
+#### Validation
+- app responds locally and remotely as expected
+- required ports are open
+- logs show healthy requests
 
-Good pattern:
-1. prove root cause
-2. fix only the required setting
-3. re-test
-4. document the change
-5. determine whether this is compliant, compensating, or exception-worthy
+## Exception and Compliance Thinking
+Sometimes the correct answer is not “disable the hardening.” It is:
 
-## Evidence to Capture
-For every hardening-related fix, capture:
+- document the exact operational requirement
+- define the security impact
+- propose a narrow compensating control
+- document an exception if required
 
-- what rule or change was involved
-- what symptom occurred
-- what commands proved the issue
-- what corrective action was taken
-- what validation proved recovery
-- whether an exception or compensating control is needed
+Examples:
+- allow a required service account path with tighter scoped permission rather than broad access
+- allow one required port instead of opening a wide range
+- restore correct SELinux context instead of disabling enforcement
 
-## Exception Thinking
-Sometimes a control cannot be applied cleanly to a mission-critical workload. When that happens, document:
+## Minimum Evidence Checklist
+For each hardening-related issue, capture:
 
-- business impact
-- technical reason
-- security risk introduced
-- compensating controls
-- approval path if required
+- service status output
+- key log lines
+- denial evidence if present
+- the corrective action
+- post-fix validation output
+- exception or compensating-control note if needed
 
-## Validation Checklist
-- service starts correctly
-- access works as intended
-- expected ports are reachable
-- logs are clean after the fix
-- compliance impact is understood
-- evidence is documented
-
-## Quick Runbook Summary
+## Quick Runbook
 ```bash
 systemctl status <service>
 journalctl -u <service> -n 100 --no-pager
@@ -233,4 +226,5 @@ ausearch -m avc -ts recent
 firewall-cmd --list-all
 ss -tulpn
 ls -l /path/to/file
+id <service-account>
 ```
