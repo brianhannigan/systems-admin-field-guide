@@ -273,7 +273,7 @@ $linuxSecurity = @'
 # Security
 
 ## Purpose
-This document captures Linux security controls most relevant to system administrators working in enterprise and compliance-aware environments.
+This document captures Linux security controls most relevant to system engineers working in enterprise and compliance-aware environments.
 
 ## Why This Matters
 Security settings are not separate from operations. They directly affect service behavior, access, automation, patching, and recoverability. Strong administrators understand both security intent and operational impact.
