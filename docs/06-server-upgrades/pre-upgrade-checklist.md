@@ -1,41 +1,37 @@
 ﻿# Pre-Upgrade Checklist
 
 ## Purpose
-List what must be checked before touching production systems.
+Document the checks that should be completed before any server upgrade or major patch activity.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Checklist
+- Confirm maintenance window
+- Identify system owner
+- Confirm business impact
+- Review dependencies
+- Confirm backup or snapshot status
+- Review current version and target version
+- Review vendor or platform release notes
+- Review known compatibility concerns
+- Confirm validation plan exists
+- Confirm rollback plan exists
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Questions to Answer
+- What depends on this system?
+- What will be unavailable during the change?
+- Is a reboot expected?
+- Is the application owner aware?
+- What is the recovery point if this fails?
 
-## Dependencies
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Evidence to Capture
+- Current version
+- Current service state
+- Backup confirmation
+- Screenshot or command outputs showing baseline condition
+- Ticket / change reference
 
-## Backups
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Owners
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Maintenance Window
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Risk Review
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation Checklist
+- All dependencies identified
+- Owners notified
+- Backup confirmed
+- Test and rollback plans written down
+- Change can be executed in a controlled way

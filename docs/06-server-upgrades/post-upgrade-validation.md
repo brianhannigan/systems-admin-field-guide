@@ -1,41 +1,44 @@
 ﻿# Post-Upgrade Validation
 
 ## Purpose
-Track what must be checked after an upgrade.
+Capture what must be checked immediately after an upgrade or major patch event.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Immediate Checks
+- System is online
+- Expected services are active
+- Expected ports are listening
+- Application responds correctly
+- No obvious new log errors
+- Monitoring sees the system
+- Security controls still hold
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Linux Validation Examples
+```bash
+hostnamectl
+uptime
+systemctl --failed
+journalctl -p err -b
+ss -tulpn
+df -h
+```
 
-## Service Health
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Questions to Confirm
+- Did all services come back?
+- Did any new errors appear?
+- Did firewall or SELinux behavior change?
+- Did a reboot change network behavior?
+- Did application owners validate functionality?
 
-## Performance
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Evidence to Capture
+- Service status output
+- Log excerpts
+- App health result
+- Monitoring screenshot or check result
+- Completion note in change ticket
 
-## Logs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Security Controls
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## User Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation Checklist
+- Technical checks passed
+- Functional checks passed
+- Security checks passed
+- Evidence recorded
+- Stakeholders notified

@@ -1,41 +1,20 @@
 ﻿# 06 - Server Upgrades
 
 ## Purpose
-Document safe upgrade planning and execution.
+This section provides a structured upgrade and patching reference for systems administrators managing planned change in enterprise environments.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Operational Focus
+- Pre-upgrade preparation
+- Snapshot and backup strategy
+- Rollback planning
+- Testing approach
+- Post-upgrade validation
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Recommended Usage
+Use these documents to plan safer upgrades, reduce unplanned downtime, and capture evidence of successful change execution.
 
-## Pre-Upgrade Checklist
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Snapshot Strategy
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Rollback Planning
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Testing Strategy
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Post-Upgrade Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Files
+- `pre-upgrade-checklist.md`
+- `rollback-planning.md`
+- `testing-strategy.md`
+- `post-upgrade-validation.md`

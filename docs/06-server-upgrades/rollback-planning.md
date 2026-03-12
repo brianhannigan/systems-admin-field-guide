@@ -1,41 +1,31 @@
 ﻿# Rollback Planning
 
 ## Purpose
-Capture rollback planning and recovery expectations.
+Document how to recover if an upgrade causes service failure, instability, or unexpected behavior.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Rollback Questions
+- What is the trigger to rollback?
+- Who makes the rollback decision?
+- What backup or snapshot is available?
+- How long will rollback take?
+- What service validation proves recovery?
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Rollback Options
+- Restore snapshot
+- Restore VM backup
+- Reinstall prior package version if supported
+- Revert application configuration
+- Fail over to alternate node if available
 
-## Decision Points
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Decision Triggers
+- Service will not start
+- Application health check fails
+- Network functionality is broken
+- Security control or required logging is lost
+- Performance degradation is unacceptable
 
-## Backup Restore
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Snapshot Revert
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Communication
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation Checklist
+- Recovery path is known before change starts
+- Team knows where the restore point is
+- Decision thresholds are defined
+- Post-rollback validation steps are documented

@@ -1,41 +1,45 @@
 ﻿# IAM and RBAC
 
 ## Purpose
-Capture Azure identity and access concepts.
+Track how Azure identity and access should be understood and validated by a systems administrator.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Concepts
+- Azure AD / Entra identity context
+- Role-Based Access Control (RBAC)
+- Scope: management group, subscription, resource group, resource
+- Least privilege
+- Role assignment review
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Common Roles to Understand
+- Reader
+- Virtual Machine Contributor
+- Network Contributor
+- Contributor
+- Owner
 
-## RBAC Roles
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Key Questions
+- Who has access?
+- At what scope is access assigned?
+- Is the access broader than necessary?
+- Are service principals or automation identities in use?
+- Are there stale or inherited permissions?
 
-## Scope
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Azure CLI Examples
+```bash
+az role assignment list --all -o table
+az role assignment list --assignee user@domain.com -o table
+az role definition list --name Contributor -o json
+```
 
-## Least Privilege
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Validation Checklist
+- Access is scoped appropriately
+- Elevated roles are justified
+- Automation identities are documented
+- Unexpected assignments are investigated
+- Least privilege is being followed
 
-## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Common Pitfalls
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Common Problems
+- Overly broad Contributor or Owner access
+- Unknown inherited permissions
+- Untracked service principals
+- Access granted at subscription scope when resource group scope was enough

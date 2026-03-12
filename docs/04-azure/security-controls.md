@@ -1,41 +1,40 @@
 ﻿# Security Controls
 
 ## Purpose
-Document Azure security controls relevant to administrators.
+Capture the Azure security controls most important for secure systems administration.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Areas
+- Network Security Groups
+- Azure Policy
+- Defender for Cloud
+- Identity controls
+- Resource exposure review
+- Baseline configuration standards
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Questions to Ask
+- What resources are internet-exposed?
+- Are policies enforcing standards?
+- Is Defender enabled?
+- Are NSGs restrictive enough?
+- Are admin accounts protected?
+- Are there configuration drifts from standard?
 
-## NSGs
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Azure CLI Examples
+```bash
+az policy assignment list -o table
+az security pricing list -o table
+az resource list --query "[].{Name:name,Type:type,Group:resourceGroup}" -o table
+```
 
-## Defender
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Validation Checklist
+- Security controls are enabled and understood
+- Internet exposure is intentional
+- Policies align with standards
+- High-risk findings are tracked
+- Admin access is controlled
 
-## Policies
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Identity Controls
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Auditability
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Common Problems
+- Unrestricted NSG rules
+- Resources deployed outside standard policy
+- Defender recommendations ignored
+- Public exposure not documented

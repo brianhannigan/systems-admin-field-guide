@@ -1,41 +1,49 @@
 ﻿# Monitoring
 
 ## Purpose
-Track Azure monitoring and alerting practices.
+Document the Azure monitoring tools and workflows most relevant to infrastructure administration.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Core Components
+- Azure Monitor
+- Activity Log
+- Metrics
+- Alerts
+- Log Analytics
+- Diagnostic settings
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## What to Monitor
+- VM health
+- CPU and memory trends
+- Disk performance
+- Network metrics
+- Restart events
+- Administrative changes
+- Failed login or access anomalies where applicable
 
-## Azure Monitor
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Azure CLI Examples
+```bash
+az monitor metrics list --resource <resource-id> --metric "Percentage CPU"
+az monitor activity-log list --max-events 20
+az monitor log-analytics workspace list -o table
+```
 
-## Log Analytics
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Operational Workflow
+1. Confirm what telemetry is enabled
+2. Review recent alerts
+3. Review activity logs for admin changes
+4. Review performance data
+5. Correlate system symptoms with Azure events
+6. Capture findings and next actions
 
-## Alerts
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Validation Checklist
+- Monitoring is enabled where needed
+- Alerts are actionable
+- Noise is reduced
+- Logs are retained appropriately
+- Ops team knows where to look first
 
-## Health
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Validation
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Common Problems
+- Monitoring not enabled
+- Too many noisy alerts
+- Metrics available but unused
+- No retention or unclear ownership

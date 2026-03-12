@@ -1,41 +1,21 @@
 ﻿# 04 - Azure Infrastructure
 
 ## Purpose
-Cover the Azure skills most relevant to a systems administrator.
+This section serves as a practical Azure operations guide for systems administrators supporting cloud-hosted infrastructure, access control, monitoring, and security.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Operational Focus
+- VM deployment and administration
+- Virtual networking
+- IAM and RBAC
+- Monitoring and alerting
+- Security controls
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Recommended Usage
+Use these documents to track Azure concepts, operational workflows, common failure points, validation steps, and lessons learned from lab or production work.
 
-## VM Deployment
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Networking
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## IAM and RBAC
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Monitoring
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Security Controls
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Files
+- `vm-deployment.md`
+- `networking.md`
+- `iam-rbac.md`
+- `monitoring.md`
+- `security-controls.md`
