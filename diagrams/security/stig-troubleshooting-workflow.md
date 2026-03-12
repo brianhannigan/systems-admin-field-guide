@@ -6,7 +6,7 @@ flowchart TD
     B --> C[Check service status]
     C --> D[Review logs and denials]
     D --> E[Identify exact control impact]
-    E --> F[Apply minimal safe fix]
-    F --> G[Re-test]
+    E --> F[Apply minimal safe corrective action]
+    F --> G[Retest]
     G --> H[Document evidence or exception]
 ```

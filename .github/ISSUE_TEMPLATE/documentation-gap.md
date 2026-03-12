@@ -14,6 +14,3 @@ What is missing, weak, or unclear?
 
 ## Expected result
 What should this section contain when fixed?
-
-## Notes
-Add real-world examples, commands, or evidence ideas here.

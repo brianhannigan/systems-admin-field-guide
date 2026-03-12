@@ -2,10 +2,10 @@
 
 ```mermaid
 flowchart TD
-    A[Collect system inventory] --> B[Identify critical systems]
+    A[Collect server and cloud inventory] --> B[Identify critical systems]
     B --> C[Map dependencies]
     C --> D[Identify owners]
-    D --> E[Review monitoring and backups]
+    D --> E[Review monitoring backups and access]
     E --> F[Document red flags]
-    F --> G[Build first priority action list]
+    F --> G[Build first-priority action list]
 ```

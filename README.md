@@ -59,21 +59,12 @@ This project is intended to demonstrate:
 
 ## Featured workflow diagrams
 - [Infrastructure Discovery Workflow](diagrams/infrastructure/infrastructure-discovery-workflow.md)
+- [Service Troubleshooting Workflow](diagrams/workflows/service-troubleshooting-workflow.md)
 - [Change and Validation Workflow](diagrams/workflows/change-and-validation-workflow.md)
+- [Vulnerability Remediation Lifecycle](diagrams/workflows/vulnerability-remediation-lifecycle.md)
 - [STIG Troubleshooting Workflow](diagrams/security/stig-troubleshooting-workflow.md)
 
-## Recommended development order
-
-1. Finish the STIG troubleshooting section
-2. Deepen Linux service and logging docs
-3. Expand Terraform fundamentals and Azure examples
-4. Add polished lab evidence and screenshots
-5. Add issue-driven backlog and milestone tracking
-6. Polish diagrams and release the first repo version
-
 ## Recommended GitHub topics
-
-Add these manually in the GitHub UI:
 
 - systems-administration
 - linux
@@ -88,14 +79,13 @@ Add these manually in the GitHub UI:
 
 ## Suggested About description
 
-Use this in the GitHub About box:
-
 Portfolio-grade systems administration field guide covering Linux, Azure, Terraform, STIG hardening, upgrades, patching, and vulnerability remediation.
 
 ## Roadmap and planning
 - [ROADMAP.md](ROADMAP.md)
 - [PROJECT_BOARD.md](PROJECT_BOARD.md)
-- [docs/MASTER_OUTLINE.md](docs/MASTER_OUTLINE.md)
+- [planning/ISSUE_CREATION_PLAN.md](planning/ISSUE_CREATION_PLAN.md)
+- [planning/MILESTONE_PLAN.md](planning/MILESTONE_PLAN.md)
 - [releases/v0.1.0-checklist.md](releases/v0.1.0-checklist.md)
 
 ## Author

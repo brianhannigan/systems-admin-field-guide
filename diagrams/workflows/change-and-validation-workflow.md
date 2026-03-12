@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart TD
-    A[Review change request] --> B[Confirm dependencies]
+    A[Review change] --> B[Confirm dependencies]
     B --> C[Confirm backup or rollback]
     C --> D[Execute planned change]
     D --> E[Run technical validation]

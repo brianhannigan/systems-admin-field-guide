@@ -7,12 +7,8 @@ assignees: ''
 ---
 
 ## Enhancement
-What portfolio or repo polish improvement is needed?
-
-## Why it matters
-How does this improve presentation, clarity, or credibility?
+What repo polish improvement is needed?
 
 ## Completion criteria
 - [ ] implemented
 - [ ] reviewed
-- [ ] visible from root repo experience

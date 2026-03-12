@@ -1,21 +1,8 @@
-﻿# Diagrams
+﻿# Diagram Index
 
-## Purpose
-This folder holds visual assets that explain the environment, workflows, and operational decision paths.
-
-## Suggested Diagram Types
-- infrastructure discovery workflow
-- service troubleshooting workflow
-- patch / upgrade workflow
-- vulnerability remediation lifecycle
-- STIG break / validate / fix flow
-- 12-week training roadmap
-
-## Folder Structure
-- `infrastructure/`
-- `workflows/`
-- `security/`
-
-## Recommended Format
-- Mermaid in markdown for fast iteration
-- PNG or SVG exports for polished portfolio visuals
+- infrastructure/infrastructure-discovery-workflow.md
+- workflows/service-troubleshooting-workflow.md
+- workflows/change-and-validation-workflow.md
+- workflows/vulnerability-remediation-lifecycle.md
+- security/stig-troubleshooting-workflow.md
+- workflows/twelve-week-roadmap.md
