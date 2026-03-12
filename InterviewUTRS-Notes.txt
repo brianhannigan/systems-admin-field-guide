@@ -1,0 +1,12 @@
+Scale out azure
+Teraform
+
+RedHat upgrades
+
+Goals:
+Azure 104 cert
+RedHat Cert
+
+RedHat stigs upgrades -- on systems online already
+More documentation in place
+
