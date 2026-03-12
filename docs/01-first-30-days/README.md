@@ -1,41 +1,20 @@
 ﻿# 01 - First 30 Days Survival Plan
 
 ## Purpose
-Capture the operational approach for surviving and learning the first month in a new systems administration role.
+This section provides a practical onboarding and infrastructure discovery framework for the first month in a new systems administration role.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Operational Focus
+- What to learn immediately
+- Questions to ask
+- Systems to map
+- Documentation to collect
+- Red flags to watch for
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Recommended Usage
+Use these files as your first-month operational guide. Treat them like an active notebook for discovery, ownership mapping, and risk identification.
 
-## Infrastructure Discovery
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Questions to Ask
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Systems to Map
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Documentation to Collect
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Red Flags to Watch For
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Files
+- `infrastructure-discovery.md`
+- `questions-to-ask.md`
+- `red-flags.md`
+- `documentation-checklist.md`

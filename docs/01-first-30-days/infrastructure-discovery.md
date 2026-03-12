@@ -1,41 +1,42 @@
 ﻿# Infrastructure Discovery
 
 ## Purpose
-Map the environment quickly and accurately.
+Capture the process for understanding a mixed infrastructure environment quickly and safely.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Discovery Priorities
+- Linux server inventory
+- Windows server inventory
+- Azure resources
+- Terraform repositories
+- Monitoring tools
+- Backup systems
+- Identity and access model
+- Patch and vulnerability tools
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## What to Map
+- Critical servers and applications
+- Network dependencies
+- Authentication dependencies
+- DNS and certificate dependencies
+- External integrations
+- Backup and restore paths
+- Owners and support contacts
 
-## Inventory Strategy
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Questions to Answer
+- What systems are mission critical?
+- What systems are fragile?
+- What systems are poorly documented?
+- What is cloud-hosted vs on-prem?
+- What depends on what?
 
-## Critical Systems
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Deliverables to Build
+- simple environment map
+- critical systems list
+- ownership list
+- known-risk list
+- operational dependency notes
 
-## Dependencies
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Monitoring
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Access
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- You can explain the major environment components
+- You know where the most critical systems live
+- You know what needs careful handling first

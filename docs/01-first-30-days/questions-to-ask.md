@@ -1,41 +1,37 @@
 ﻿# Questions to Ask
 
 ## Purpose
-Capture the most important discovery questions for inherited environments.
+Record the most important questions to ask when inheriting an environment built or managed by others.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Operations Questions
+- What breaks most often?
+- What maintenance windows already exist?
+- What systems must never go down?
+- What tickets repeat constantly?
+- What tasks are still manual?
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Infrastructure Questions
+- Where are the Terraform repositories?
+- Which systems are Azure-hosted?
+- Which systems are Windows vs Linux?
+- What systems are mid-upgrade or overdue?
+- What systems have hidden dependencies?
 
-## Operations
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Security Questions
+- What STIG baselines apply here?
+- What vulnerability scanner is used?
+- How often are scans run?
+- What findings are currently open?
+- What security changes caused breakage in the past?
 
-## Security
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## Ownership Questions
+- Who owns each application?
+- Who approves downtime?
+- Who approves patching?
+- Who is the escalation point for outages?
+- Who knows the most about the current environment?
 
-## Upgrades
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Patching
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Ownership
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- You have identified the right people to ask
+- You have captured answers in a reusable format
+- You know where uncertainty still exists

@@ -1,46 +1,37 @@
 ﻿# Documentation Checklist
 
 ## Purpose
-List the docs that should exist and must be collected.
+Track the documents and reference materials that should exist in a manageable infrastructure environment.
 
-## Scope
-- Define what this component covers
-- Identify operational responsibilities
-- Capture common risks, failure points, and validation steps
+## Documents to Collect
+- architecture diagrams
+- server inventory
+- application inventory
+- backup and restore procedures
+- patching schedule
+- upgrade plans
+- vulnerability remediation tracker
+- monitoring overview
+- escalation contact list
+- admin access procedures
+- Terraform repo locations
+- STIG or hardening baselines
 
-## Recommended Outcome
-- Clear field guide content
-- Practical commands or workflows
-- Troubleshooting guidance
-- Validation checklist
+## Useful Evidence
+- current service status snapshots
+- screenshots of dashboards
+- sample change tickets
+- sample incident notes
+- current vulnerability scan summaries
 
-## Architecture
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
+## What to Create If Missing
+- critical system list
+- owner/contact map
+- upgrade validation checklist
+- first-response troubleshooting guide
+- dependency notes for fragile systems
 
-## Runbooks
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Backups
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Monitoring
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Patching
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
-## Access
-- Add real-world notes here
-- Add commands, workflows, or examples
-- Add validation or troubleshooting notes
-
+## Validation
+- You know which docs exist
+- You know which docs are missing
+- You have a prioritized list of what must be created first
