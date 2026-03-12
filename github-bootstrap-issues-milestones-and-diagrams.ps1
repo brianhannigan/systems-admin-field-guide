@@ -978,3 +978,11 @@ Write-Host "git status"
 Write-Host "git add ."
 Write-Host 'git commit -m "polish: add diagrams lab templates and bootstrap github backlog"'
 Write-Host "git push"
+cd "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+gh auth status
+.\github-bootstrap-issues-milestones-and-diagrams.ps1 -All
+git status
+git add .
+git commit -m "polish: add diagrams lab templates and bootstrap github backlog"
+git push
