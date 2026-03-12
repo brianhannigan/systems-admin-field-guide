@@ -1,6 +1,6 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide",
-    [string]$RepoName = "systems-admin-field-guide",
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide",
+    [string]$RepoName = "systems-engineer-field-guide",
     [string]$GitHubUser = "brianhannigan",
     [string]$AuthorName = "Brian Hannigan",
     [switch]$InitializeGitkeepFiles
@@ -91,7 +91,7 @@ $builderScripts = @(
     "build-first-priority-files.ps1",
     "build-next-priority-files.ps1",
     "build-training-labs-and-scripts.ps1",
-    "build-systems-admin-field-guide.ps1",
+    "build-systems-engineer-field-guide.ps1",
     "build-last-phase-files.ps1",
     "repo-polish-pass.ps1"
 )
@@ -107,13 +107,13 @@ foreach ($scriptName in $builderScripts) {
 Write-Section "Writing improved root README"
 
 $readme = @"
-# Systems Admin First 90 Days Field Guide
+# Systems Engineer First 90 Days Field Guide
 
 > A portfolio-grade systems administration field guide focused on Linux, Azure, Terraform, STIG hardening, patching, upgrades, vulnerability remediation, and practical single-VM lab workflows.
 
 ## What this project is
 
-This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Administrator role.
+This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Engineer role.
 
 It is designed to show practical, production-minded thinking across:
 
@@ -530,3 +530,4 @@ Write-Host "git status"
 Write-Host "git add ."
 Write-Host 'git commit -m "polish: improve repo presentation add planning and move builder scripts"'
 Write-Host "git push"
+

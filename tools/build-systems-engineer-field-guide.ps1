@@ -1,6 +1,6 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide",
-    [string]$RepoName = "systems-admin-field-guide",
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide",
+    [string]$RepoName = "systems-engineer-field-guide",
     [string]$AuthorName = "Brian Hannigan",
     [string]$GitHubUser = "brianhannigan",
     [switch]$InitializeGit
@@ -112,7 +112,7 @@ foreach ($folder in $folders) {
 # README
 # ----------------------------
 $readme = @"
-# Systems Admin First 90 Days Field Guide
+# Systems Engineer First 90 Days Field Guide
 
 A portfolio-grade systems administration operations guide focused on:
 
@@ -127,11 +127,11 @@ A portfolio-grade systems administration operations guide focused on:
 
 ## Why this project exists
 
-This repository was created as a structured operational training system for a new Systems Administrator role in a mixed enterprise environment. The goal is to provide a practical, field-ready knowledge base that can be expanded over time into a real operational handbook.
+This repository was created as a structured operational training system for a new Systems Engineer role in a mixed enterprise environment. The goal is to provide a practical, field-ready knowledge base that can be expanded over time into a real operational handbook.
 
 ## Who this is for
 
-- Systems Administrators
+- Systems Engineers
 - Infrastructure Engineers
 - DevOps / Platform Engineers
 - Security-minded administrators
@@ -139,11 +139,11 @@ This repository was created as a structured operational training system for a ne
 
 ## Repository map
 
-- `/docs` → field guide chapters
-- `/labs` → hands-on single-VM exercises
-- `/scripts` → admin automation examples
-- `/diagrams` → architecture and workflow visuals
-- `/assets` → images, banners, screenshots
+- `/docs` â†’ field guide chapters
+- `/labs` â†’ hands-on single-VM exercises
+- `/scripts` â†’ admin automation examples
+- `/diagrams` â†’ architecture and workflow visuals
+- `/assets` â†’ images, banners, screenshots
 
 ## Core focus areas
 
@@ -480,7 +480,7 @@ New-MarkdownSectionFile -Path (Join-Path $RepoPath "docs\03-terraform\azure-exam
 New-MarkdownSectionFile -Path (Join-Path $RepoPath "docs\03-terraform\troubleshooting.md") -Title "Terraform Troubleshooting" -Purpose "Capture common Terraform problems and fixes." -Sections @("Init Failures","Plan Errors","State Conflicts","Provider Issues","Drift")
 
 # 04
-New-MarkdownSectionFile -Path (Join-Path $RepoPath "docs\04-azure\README.md") -Title "04 - Azure Infrastructure" -Purpose "Cover the Azure skills most relevant to a systems administrator." -Sections @(
+New-MarkdownSectionFile -Path (Join-Path $RepoPath "docs\04-azure\README.md") -Title "04 - Azure Infrastructure" -Purpose "Cover the Azure skills most relevant to a systems engineer." -Sections @(
     "VM Deployment",
     "Networking",
     "IAM and RBAC",
@@ -630,7 +630,7 @@ Suggested visuals to add:
 - Patching workflow
 - Vulnerability remediation lifecycle
 - STIG break / troubleshoot flow
-- Terraform plan → apply → validate flow
+- Terraform plan â†’ apply â†’ validate flow
 - 12-week training roadmap
 "@
 New-FileSafe -Path (Join-Path $RepoPath "diagrams\README.md") -Content $diagramReadme
@@ -847,7 +847,7 @@ if ($InitializeGit) {
         }
 
         git add .
-        git commit -m "Initial commit - systems admin field guide scaffold" 2>$null
+        git commit -m "Initial commit - systems engineer field guide scaffold" 2>$null
         git branch -M main
 
         Write-Host ""
@@ -864,3 +864,4 @@ if ($InitializeGit) {
 Write-Host ""
 Write-Host "Repo scaffold build complete." -ForegroundColor Cyan
 Write-Host "Location: $RepoPath" -ForegroundColor Cyan
+

@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+Ôªøparam(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -164,7 +164,7 @@ ping <dependency-host>
 ```
 
 ## Validation Pattern
-Never stop at ìservice is active.î
+Never stop at ‚Äúservice is active.‚Äù
 
 Validate all of the following where applicable:
 
@@ -388,7 +388,7 @@ Use this mindset:
 - using stale local code
 - changing cloud resources manually, then forgetting drift exists
 - treating state casually
-- assuming ìno syntax errorî means ìsafe changeî
+- assuming ‚Äúno syntax error‚Äù means ‚Äúsafe change‚Äù
 
 ## Small Azure Example
 ```hcl
@@ -479,7 +479,7 @@ $stigTroubleshooting = @'
 This document provides a repeatable workflow for diagnosing systems that break after hardening changes, policy tightening, or baseline enforcement.
 
 ## Why This Matters
-STIG implementation often improves security while introducing operational friction. Services may stop working not because the system is ìbad,î but because a dependency, permission, access path, or policy assumption changed.
+STIG implementation often improves security while introducing operational friction. Services may stop working not because the system is ‚Äúbad,‚Äù but because a dependency, permission, access path, or policy assumption changed.
 
 A strong administrator should be able to answer:
 
@@ -744,3 +744,4 @@ Write-Host "cd `"$RepoPath`""
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: upgrade core linux terraform and stig portfolio docs"'
 Write-Host "git push"
+

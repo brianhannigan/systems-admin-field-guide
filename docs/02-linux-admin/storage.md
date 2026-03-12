@@ -1,7 +1,7 @@
 ﻿# Storage
 
 ## Purpose
-Document disk, filesystem, and LVM operations needed by a systems administrator.
+Document disk, filesystem, and LVM operations needed by a systems engineer.
 
 ## Disk and Filesystem Inventory
 ```bash
@@ -51,3 +51,4 @@ df -h
 mount | grep /mnt/app
 lsblk
 ```
+

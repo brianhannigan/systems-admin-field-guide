@@ -1,7 +1,7 @@
 ﻿# 04 - Azure Infrastructure
 
 ## Purpose
-This section serves as a practical Azure operations guide for systems administrators supporting cloud-hosted infrastructure, access control, monitoring, and security.
+This section serves as a practical Azure operations guide for systems engineers supporting cloud-hosted infrastructure, access control, monitoring, and security.
 
 ## Operational Focus
 - VM deployment and administration
@@ -19,3 +19,4 @@ Use these documents to track Azure concepts, operational workflows, common failu
 - `iam-rbac.md`
 - `monitoring.md`
 - `security-controls.md`
+

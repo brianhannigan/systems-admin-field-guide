@@ -1,7 +1,7 @@
 ﻿# Team Expert Checklist
 
 ## Purpose
-Track the progression from new systems administrator to trusted team infrastructure expert over the first six months.
+Track the progression from new systems engineer to trusted team infrastructure expert over the first six months.
 
 ## Month 1 - Understand the Environment
 - know the major systems
@@ -45,3 +45,4 @@ Track the progression from new systems administrator to trusted team infrastruct
 - You are no longer just following tasks
 - You are identifying risks before they cause outages
 - You are improving team knowledge, not just your own
+

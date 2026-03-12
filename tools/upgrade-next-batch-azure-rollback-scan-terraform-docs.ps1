@@ -1,5 +1,5 @@
 ﻿param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -60,7 +60,7 @@ $azureVmDeployment = @'
 # VM Deployment
 
 ## Purpose
-This document provides a practical Azure VM deployment and validation workflow for systems administrators supporting cloud-hosted infrastructure.
+This document provides a practical Azure VM deployment and validation workflow for systems engineers supporting cloud-hosted infrastructure.
 
 ## Why This Matters
 A VM deployment is not complete when the platform says “Succeeded.” It is only complete when:
@@ -763,3 +763,4 @@ Write-Host "git status"
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: upgrade azure vm deployment rbac rollback scan analysis and terraform troubleshooting docs"'
 Write-Host "git push"
+

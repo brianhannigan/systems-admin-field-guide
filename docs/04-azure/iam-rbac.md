@@ -1,7 +1,7 @@
 ﻿# IAM and RBAC
 
 ## Purpose
-Track how Azure identity and access should be understood and validated by a systems administrator.
+Track how Azure identity and access should be understood and validated by a systems engineer.
 
 ## Core Concepts
 - Azure AD / Entra identity context
@@ -43,3 +43,4 @@ az role definition list --name Contributor -o json
 - Unknown inherited permissions
 - Untracked service principals
 - Access granted at subscription scope when resource group scope was enough
+

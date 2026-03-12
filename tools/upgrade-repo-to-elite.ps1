@@ -1,6 +1,6 @@
-<#
+﻿<#
 .SYNOPSIS
-Upgrades the systems-admin-field-guide repository to an elite portfolio-grade structure.
+Upgrades the systems-engineer-field-guide repository to an elite portfolio-grade structure.
 
 .DESCRIPTION
 This script:
@@ -12,7 +12,7 @@ This script:
 6. Validates that all expected files were created successfully.
 
 .RECOMMENDED USAGE
-cd "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+cd "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\tools\upgrade-repo-to-elite.ps1
 
@@ -90,8 +90,8 @@ function Assert-RepoRoot {
     }
 
     $leaf = Split-Path $Root -Leaf
-    if ($leaf -ne "systems-admin-field-guide") {
-        Write-Host "Warning: current folder name is '$leaf' instead of 'systems-admin-field-guide'." -ForegroundColor Yellow
+    if ($leaf -ne "systems-engineer-field-guide") {
+        Write-Host "Warning: current folder name is '$leaf' instead of 'systems-engineer-field-guide'." -ForegroundColor Yellow
     }
 }
 
@@ -145,7 +145,7 @@ foreach ($dir in $directories) {
 Write-Step "Writing flagship README"
 
 $readme = @'
-# Systems Administrator Field Guide
+# Systems Engineer Field Guide
 
 A practical enterprise operations manual for managing secure infrastructure environments.
 

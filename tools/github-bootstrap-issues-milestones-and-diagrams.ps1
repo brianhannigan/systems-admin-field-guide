@@ -1,7 +1,7 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide",
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide",
     [string]$Owner = "brianhannigan",
-    [string]$Repo = "systems-admin-field-guide",
+    [string]$Repo = "systems-engineer-field-guide",
     [switch]$CreateIssues,
     [switch]$CreateLabels,
     [switch]$WriteDiagramFiles,
@@ -978,7 +978,7 @@ Write-Host "git status"
 Write-Host "git add ."
 Write-Host 'git commit -m "polish: add diagrams lab templates and bootstrap github backlog"'
 Write-Host "git push"
-cd "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+cd "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 gh auth status
 .\github-bootstrap-issues-milestones-and-diagrams.ps1 -All
@@ -986,3 +986,4 @@ git status
 git add .
 git commit -m "polish: add diagrams lab templates and bootstrap github backlog"
 git push
+

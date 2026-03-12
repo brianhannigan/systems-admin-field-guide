@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -55,7 +55,7 @@ $azureReadme = @'
 # 04 - Azure Infrastructure
 
 ## Purpose
-This section serves as a practical Azure operations guide for systems administrators supporting cloud-hosted infrastructure, access control, monitoring, and security.
+This section serves as a practical Azure operations guide for systems engineers supporting cloud-hosted infrastructure, access control, monitoring, and security.
 
 ## Operational Focus
 - VM deployment and administration
@@ -185,7 +185,7 @@ $azureIamRbac = @'
 # IAM and RBAC
 
 ## Purpose
-Track how Azure identity and access should be understood and validated by a systems administrator.
+Track how Azure identity and access should be understood and validated by a systems engineer.
 
 ## Core Concepts
 - Azure AD / Entra identity context
@@ -337,7 +337,7 @@ $upgradeReadme = @'
 # 06 - Server Upgrades
 
 ## Purpose
-This section provides a structured upgrade and patching reference for systems administrators managing planned change in enterprise environments.
+This section provides a structured upgrade and patching reference for systems engineers managing planned change in enterprise environments.
 
 ## Operational Focus
 - Pre-upgrade preparation
@@ -770,3 +770,4 @@ Write-Host "cd `"$RepoPath`""
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: build azure upgrade and vulnerability files"'
 Write-Host "git push"
+

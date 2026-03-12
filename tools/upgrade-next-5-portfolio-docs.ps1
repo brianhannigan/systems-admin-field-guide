@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -906,3 +906,4 @@ Write-Host "git status"
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: upgrade logging security monitoring pre-upgrade and remediation validation docs"'
 Write-Host "git push"
+

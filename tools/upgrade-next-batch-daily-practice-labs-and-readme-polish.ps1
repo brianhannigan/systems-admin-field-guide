@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -209,7 +209,7 @@ $labsReadme = @'
 # Cyber Range Labs
 
 ## Purpose
-This section provides practical single-VM exercises that simulate the kinds of infrastructure issues a systems administrator is likely to face in a mixed Linux, Azure, Terraform, and security-conscious environment.
+This section provides practical single-VM exercises that simulate the kinds of infrastructure issues a systems engineer is likely to face in a mixed Linux, Azure, Terraform, and security-conscious environment.
 
 ## Design Constraint
 These labs are designed around a one-VM-at-a-time model. That means the focus is on:
@@ -256,7 +256,7 @@ Use:
 - access path validation
 
 ### 4. Apply the Smallest Safe Fix
-Do not “fix everything.” Correct the actual cause and validate.
+Do not â€œfix everything.â€ Correct the actual cause and validate.
 
 ### 5. Capture Evidence
 Every lab should record:
@@ -454,12 +454,12 @@ Write-Utf8File -Path (Join-Path $assetsPath "ASSET_PLAN.md") -Content $assetNote
 Write-Section "Polishing root README"
 
 $readme = @'
-# Systems Admin First 90 Days Field Guide
+# Systems Engineer First 90 Days Field Guide
 
 > A portfolio-grade systems administration field guide focused on Linux, Azure, Terraform, STIG hardening, patching, upgrades, vulnerability remediation, and practical single-VM lab workflows.
 
 ## What this project is
-This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Administrator role.
+This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Engineer role.
 
 It is designed to demonstrate practical, production-minded thinking across:
 - Red Hat Linux administration
@@ -549,7 +549,7 @@ Portfolio-grade systems administration field guide covering Linux, Azure, Terraf
 ## Author
 Brian Hannigan  
 GitHub: https://github.com/brianhannigan  
-Repo: https://github.com/brianhannigan/systems-admin-field-guide
+Repo: https://github.com/brianhannigan/systems-engineer-field-guide
 '@
 Write-Utf8File -Path (Join-Path $repoRoot "README.md") -Content $readme
 
@@ -587,3 +587,4 @@ Write-Host "git status"
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: upgrade daily practice labs roadmap and readme polish docs"'
 Write-Host "git push"
+

@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -318,7 +318,7 @@ $teamExpert = @'
 # Team Expert Checklist
 
 ## Purpose
-Track the progression from new systems administrator to trusted team infrastructure expert over the first six months.
+Track the progression from new systems engineer to trusted team infrastructure expert over the first six months.
 
 ## Month 1 - Understand the Environment
 - know the major systems
@@ -531,3 +531,4 @@ Write-Host "cd `"$RepoPath`""
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: build first 30 days daily practice roadmap and diagram docs"'
 Write-Host "git push"
+

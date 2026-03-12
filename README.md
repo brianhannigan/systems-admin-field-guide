@@ -1,10 +1,10 @@
-# Systems Admin First 90 Days Field Guide
+﻿# Systems Engineer First 90 Days Field Guide
 
 > A portfolio-grade systems administration field guide focused on Linux, Azure, Terraform, STIG hardening, patching, upgrades, vulnerability remediation, and practical single-VM lab workflows.
 
 ## What this project is
 
-This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Administrator role.
+This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Engineer role.
 
 It is designed to show practical, production-minded thinking across:
 
@@ -92,4 +92,5 @@ Portfolio-grade systems administration field guide covering Linux, Azure, Terraf
 
 Brian Hannigan  
 GitHub: https://github.com/brianhannigan  
-Repo: https://github.com/brianhannigan/systems-admin-field-guide
+Repo: https://github.com/brianhannigan/systems-engineer-field-guide
+

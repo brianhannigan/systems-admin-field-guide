@@ -1,10 +1,10 @@
-# Azure Networking
+﻿# Azure Networking
 
 ## Purpose
-This document provides a practical troubleshooting and validation guide for Azure networking as used by systems administrators supporting virtual machines and connected services.
+This document provides a practical troubleshooting and validation guide for Azure networking as used by systems engineers supporting virtual machines and connected services.
 
 ## Why This Matters
-Many “server problems” are really network path problems. Azure networking issues often come down to one of these layers:
+Many â€œserver problemsâ€ are really network path problems. Azure networking issues often come down to one of these layers:
 
 - wrong VNet or subnet
 - NSG rule mismatch

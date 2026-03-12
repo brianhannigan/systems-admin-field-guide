@@ -1,7 +1,7 @@
 ﻿# 06 - Server Upgrades
 
 ## Purpose
-This section provides a structured upgrade and patching reference for systems administrators managing planned change in enterprise environments.
+This section provides a structured upgrade and patching reference for systems engineers managing planned change in enterprise environments.
 
 ## Operational Focus
 - Pre-upgrade preparation
@@ -18,3 +18,4 @@ Use these documents to plan safer upgrades, reduce unplanned downtime, and captu
 - `rollback-planning.md`
 - `testing-strategy.md`
 - `post-upgrade-validation.md`
+

@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -268,7 +268,7 @@ $linuxStorage = @'
 # Storage
 
 ## Purpose
-Document disk, filesystem, and LVM operations needed by a systems administrator.
+Document disk, filesystem, and LVM operations needed by a systems engineer.
 
 ## Disk and Filesystem Inventory
 ```bash
@@ -990,3 +990,4 @@ Write-Host "cd `"$RepoPath`""
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: build first priority linux terraform stig files"'
 Write-Host "git push"
+

@@ -1,5 +1,5 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide"
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide"
 )
 
 $ErrorActionPreference = "Stop"
@@ -55,7 +55,7 @@ $weekPlanReadme = @'
 # 08 - 12 Week Plan
 
 ## Purpose
-This section provides a structured 12-week development plan for a systems administrator entering a mixed Linux, Windows, Azure, Terraform, and compliance-focused environment.
+This section provides a structured 12-week development plan for a systems engineer entering a mixed Linux, Windows, Azure, Terraform, and compliance-focused environment.
 
 ## Operational Focus
 - Fast infrastructure ramp-up
@@ -871,3 +871,4 @@ Write-Host "cd `"$RepoPath`""
 Write-Host "git add ."
 Write-Host 'git commit -m "docs: build 12 week plan cyber range labs and scripts docs"'
 Write-Host "git push"
+

@@ -1,7 +1,7 @@
-param(
-    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-admin-field-guide",
+﻿param(
+    [string]$RepoPath = "C:\Users\BrianH\Documents\0000 - Portfolio\systems-engineer-field-guide",
     [string]$Owner = "brianhannigan",
-    [string]$Repo = "systems-admin-field-guide",
+    [string]$Repo = "systems-engineer-field-guide",
     [switch]$SkipGitHub
 )
 
@@ -179,7 +179,7 @@ $builderScripts = @(
     "build-final-files.ps1",
     "build-first-priority-files.ps1",
     "build-next-priority-files.ps1",
-    "build-systems-admin-field-guide.ps1",
+    "build-systems-engineer-field-guide.ps1",
     "build-training-labs-and-scripts.ps1",
     "repo-polish-pass.ps1",
     "github-bootstrap-issues-milestones-and-diagrams.ps1"
@@ -194,13 +194,13 @@ foreach ($scriptName in $builderScripts) {
 Write-Section "Writing polished README and repo docs"
 
 $readme = @"
-# Systems Admin First 90 Days Field Guide
+# Systems Engineer First 90 Days Field Guide
 
 > A portfolio-grade systems administration field guide focused on Linux, Azure, Terraform, STIG hardening, patching, upgrades, vulnerability remediation, and practical single-VM lab workflows.
 
 ## What this project is
 
-This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Administrator role.
+This repository is a structured operational handbook for ramping into a mixed infrastructure Systems Engineer role.
 
 It is designed to show practical, production-minded thinking across:
 
@@ -729,3 +729,4 @@ Write-Host 'git commit -m "polish: fix repo presentation diagrams and github bac
 Write-Host "git push"
 Write-Host ""
 Write-Host "Then in GitHub UI, manually set About description/topics using GITHUB_ABOUT.md"
+
