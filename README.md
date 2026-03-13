@@ -44,7 +44,18 @@ A portfolio-grade systems engineering handbook focused on:
 ------------------------------------------------------------------------
 
 ## What This Project Demonstrates
+## Real-World Skills Demonstrated
 
+This repository demonstrates practical infrastructure engineering skills used in enterprise and government environments:
+
+• diagnosing infrastructure failures  
+• troubleshooting Linux services  
+• validating Terraform deployments  
+• implementing STIG hardening  
+• responding to infrastructure security incidents  
+• performing vulnerability remediation workflows  
+• documenting repeatable troubleshooting playbooks  
+• building operational runbooks and reference documentation
 This repository showcases:
 
 • structured systems thinking\
