@@ -1,4 +1,4 @@
-﻿# Scenario â€” Azure VM Fails to Deploy
+﻿# Scenario Azure VM Fails to Deploy
 
 ## Problem
 An Azure virtual machine deployment fails during provisioning or never reaches a healthy running state.
