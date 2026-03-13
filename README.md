@@ -10,14 +10,47 @@
 
 ## Architecture & Workflow Diagrams
 
+This repository is organized around practical systems engineering workflows used in security-conscious enterprise and government environments.  
+The diagrams below highlight the core operating model, change-control thinking, and infrastructure lifecycle represented throughout the guide.
+
 ### Infrastructure Architecture
 ![](assets/infrastructure_architecture.svg)
+
+This diagram shows the high-level systems stack represented in the repository:
+- Azure / cloud resource layer
+- Linux and Windows server operations
+- Terraform automation and repeatable deployment
+- STIG hardening and compliance alignment
+- monitoring, logging, and validation
+- vulnerability remediation and closure workflows
+
+---
 
 ### Security Incident Workflow
 ![](assets/security_incident_workflow.svg)
 
+This workflow visualizes how operational engineering and security response intersect:
+- alert validation
+- affected system identification
+- severity and scope determination
+- containment and root cause investigation
+- remediation and service recovery
+- security and stability validation
+- lessons learned and evidence capture
+
+---
+
 ### Terraform Deployment Flow
 ![](assets/terraform_deployment_flow.svg)
+
+This diagram shows a disciplined infrastructure-as-code path:
+- author or update Terraform code
+- format and validate configuration
+- review `terraform plan`
+- approve changes
+- apply safely
+- validate resources after deployment
+- confirm state and drift posture
 
 ## Engineering Domains Covered
 
