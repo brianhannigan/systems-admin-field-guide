@@ -61,17 +61,6 @@ This diagram shows a disciplined infrastructure-as-code path:
 • vulnerability remediation  
 • monitoring and logging  
 • infrastructure troubleshooting  
-• operational runbooks and playbooks  
-
-## Engineering Domains Covered
-
-• Linux systems administration  
-• Azure cloud infrastructure  
-• Terraform infrastructure-as-code  
-• STIG hardening and compliance  
-• vulnerability remediation  
-• monitoring and logging  
-• infrastructure troubleshooting  
 • operational runbooks and playbooks
 
 A portfolio-grade systems engineering handbook focused on:
