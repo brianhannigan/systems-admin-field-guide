@@ -1,5 +1,16 @@
 # Systems Engineer Field Guide
 
+## Architecture & Workflow Diagrams
+
+### Infrastructure Architecture
+![Infrastructure Architecture](assets/infrastructure_architecture.svg)
+
+### Security Incident Workflow
+![Security Incident Workflow](assets/security_incident_workflow.svg)
+
+### Terraform Deployment Flow
+![Terraform Deployment Flow](assets/terraform_deployment_flow.svg)
+
 A portfolio-grade systems engineering handbook focused on:
 
 • Linux administration\
