@@ -127,10 +127,9 @@ Use this reading path to get the most value from the repository:
 • [Systems Engineer Cheat Sheet](docs/components/11-daily-30-minute-practice-routine.md)
 
 ------------------------------------------------------------------------
-
 ## Repository Structure
 
-``` text
+```text
 .github/
 └── ISSUE_TEMPLATE/        # issue templates for repo management
 
@@ -150,18 +149,18 @@ docs/
 ├── scripts/               # documentation for repo automation scripts
 └── workflows/             # lifecycle, validation, and security workflows
 
-labs/                      # broader lab material already present in repo
-planning/                  # roadmap and planning material
-releases/                  # release checklists and version notes
-scripts/                   # helper scripts and automation examples
-terraform/                 # infrastructure-as-code examples
-tools/                     # repo-building and upgrade scripts
+labs/
+planning/
+releases/
+scripts/
+terraform/
+tools/
 
-README.md                  # repository overview and navigation
-ROADMAP.md                 # project roadmap
-PROJECT_BOARD.md           # development planning
-LICENSE                    # project license
-CONTRIBUTING.md            # contribution guidelines
+README.md
+ROADMAP.md
+PROJECT_BOARD.md
+LICENSE
+CONTRIBUTING.md
 ```
 
 ------------------------------------------------------------------------
