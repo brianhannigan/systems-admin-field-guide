@@ -30,7 +30,7 @@
   <text x="430.0" y="297" text-anchor="middle" class="label">Identify Affected Systems</text>
   <path d="M430 318 L430 332" class="line"/>
   <rect x="90" y="336" width="680" height="54" class="box"/>
-  <text x="430.0" y="369" text-anchor="middle" class="label">Determine Severity & Scope</text>
+  <text x="430.0" y="369" text-anchor="middle" class="label">Determine Severity &amp; Scope</text>
   <path d="M430 390 L430 404" class="line"/>
   <rect x="90" y="408" width="680" height="54" class="accent"/>
   <text x="430.0" y="441" text-anchor="middle" class="label">Contain</text>
@@ -45,7 +45,7 @@
   <text x="430.0" y="657" text-anchor="middle" class="label">Recover Service</text>
   <path d="M430 678 L430 692" class="line"/>
   <rect x="90" y="696" width="680" height="54" class="accent"/>
-  <text x="430.0" y="729" text-anchor="middle" class="label">Validate Security & Stability</text>
+  <text x="430.0" y="729" text-anchor="middle" class="label">Validate Security &amp; Stability</text>
   <path d="M430 750 L430 764" class="line"/>
   <rect x="90" y="768" width="680" height="54" class="box"/>
   <text x="430.0" y="801" text-anchor="middle" class="label">Document Lessons Learned</text>

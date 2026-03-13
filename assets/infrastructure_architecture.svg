@@ -33,7 +33,7 @@
   <text x="395.0" y="410" text-anchor="middle" class="label">Terraform / Automation</text>
   <text x="395.0" y="434" text-anchor="middle" class="small">repeatable deployment · change control</text>
   <rect x="230" y="500" width="330" height="80" class="box"/>
-  <text x="395.0" y="530" text-anchor="middle" class="label">Hardening & Compliance</text>
+  <text x="395.0" y="530" text-anchor="middle" class="label">Hardening &amp; Compliance</text>
   <text x="395.0" y="554" text-anchor="middle" class="small">STIGs · baselines · remediation</text>
   <rect x="230" y="620" width="330" height="80" class="box"/>
   <text x="395.0" y="650" text-anchor="middle" class="label">Monitoring / Logging</text>
