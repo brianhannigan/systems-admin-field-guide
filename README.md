@@ -10,8 +10,7 @@
 
 ## Architecture & Workflow Diagrams
 
-This repository is organized around practical systems engineering workflows used in security-conscious enterprise and government environments.  
-The diagrams below highlight the core operating model, change-control thinking, and infrastructure lifecycle represented throughout the guide.
+This repository is organized around practical systems engineering workflows used in security-conscious enterprise and government environments. This repository combines operational runbooks, security-aware workflows, and infrastructure validation practices into a portfolio-grade systems engineering knowledge base. The diagrams below highlight the core operating model, change-control thinking, and infrastructure lifecycle represented throughout the guide.
 
 ### Infrastructure Architecture
 ![](assets/infrastructure_architecture.svg)
