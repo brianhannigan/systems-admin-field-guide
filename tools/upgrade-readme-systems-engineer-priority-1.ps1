@@ -1,7 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$RepoRoot = (Get-Location).Path,
-    [switch]$Force
+    [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot)
 )
 
 Set-StrictMode -Version Latest
@@ -20,7 +19,7 @@ function Get-FileContent {
         throw "File not found: $Path"
     }
 
-    return Get-Content -LiteralPath $Path -Raw
+    Get-Content -LiteralPath $Path -Raw
 }
 
 function Set-FileContent {
@@ -33,26 +32,6 @@ function Set-FileContent {
     Write-Host "Updated file: $Path" -ForegroundColor Green
 }
 
-function Ensure-Contains {
-    param(
-        [string]$Content,
-        [string]$Marker,
-        [string]$Block,
-        [switch]$ReplaceIfExists
-    )
-
-    if ($Content -match [regex]::Escape($Marker)) {
-        if ($ReplaceIfExists) {
-            return $Content
-        }
-
-        Write-Host "Section already present: $Marker" -ForegroundColor DarkGray
-        return $Content
-    }
-
-    return ($Content.TrimEnd() + "`r`n`r`n" + $Block.Trim() + "`r`n")
-}
-
 function Insert-After-FirstMatch {
     param(
         [string]$Content,
@@ -60,7 +39,12 @@ function Insert-After-FirstMatch {
         [string]$InsertionBlock
     )
 
-    $match = [regex]::Match($Content, $Pattern, [System.Text.RegularExpressions.RegexOptions]::Multiline)
+    $match = [regex]::Match(
+        $Content,
+        $Pattern,
+        [System.Text.RegularExpressions.RegexOptions]::Multiline
+    )
+
     if (-not $match.Success) {
         return ($Content.TrimEnd() + "`r`n`r`n" + $InsertionBlock.Trim() + "`r`n")
     }
@@ -76,8 +60,8 @@ function Remove-SectionByHeader {
     )
 
     $escapedHeader = [regex]::Escape($Header)
-    $pattern = "(?ms)^\Q$Header\E\s*$.*?(?=^\#\#\s|\z)"
-    return [regex]::Replace($Content, $pattern, '').TrimEnd() + "`r`n"
+    $pattern = "(?ms)^$escapedHeader\s*$.*?(?=^##\s|\z)"
+    return [regex]::Replace($Content, $pattern, '').TrimEnd()
 }
 
 Write-Section "Validating repository path"
@@ -282,10 +266,7 @@ foreach ($header in $headersToReplace) {
 
 Write-Section "Inserting upgraded README sections"
 
-$inserted = $false
-
-if ($readme -match '(?m)^# .+$') {
-    $readme = Insert-After-FirstMatch -Content $readme -Pattern '^(# .+)$' -InsertionBlock @"
+$combinedBlock = @"
 $howToUseBlock
 
 $readingOrderBlock
@@ -298,28 +279,12 @@ $repoMapBlock
 
 $priorityRoadmapBlock
 "@
-    $inserted = $true
-}
 
-if (-not $inserted) {
-    $readme = $readme.TrimEnd() + "`r`n`r`n" + @"
-$howToUseBlock
-
-$readingOrderBlock
-
-$operationalModelBlock
-
-$practiceBlock
-
-$repoMapBlock
-
-$priorityRoadmapBlock
-"@.Trim() + "`r`n"
-}
+$readme = Insert-After-FirstMatch -Content $readme -Pattern '^(# .+)$' -InsertionBlock $combinedBlock
 
 Write-Section "Saving README"
 
-Set-FileContent -Path $readmePath -Content $readme
+Set-FileContent -Path $readmePath -Content ($readme.TrimEnd() + "`r`n")
 
 Write-Section "Complete"
 
