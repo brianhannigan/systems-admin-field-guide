@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="950" viewBox="0 0 860 950">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #4b5563; }
+      .label { font: 600 16px Arial, sans-serif; fill: #111827; }
+      .small { font: 400 13px Arial, sans-serif; fill: #374151; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 16; ry: 16; }
+      .accent { fill: #eef2ff; stroke: #3730a3; stroke-width: 2; rx: 16; ry: 16; }
+      .line { stroke: #475569; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .thin { stroke: #94a3b8; stroke-width: 2; fill: none; marker-end: url(#arrow2); }
+      .pill { fill: #ecfeff; stroke: #0f766e; stroke-width: 2; rx: 999; ry: 999; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <text x="40" y="42" class="title">Security Incident Workflow</text>
+  <text x="40" y="68" class="subtitle">Operational response path for security-aware systems engineering</text>
+  <rect x="90" y="120" width="680" height="54" class="accent"/>
+  <text x="430.0" y="153" text-anchor="middle" class="label">Alert</text>
+  <path d="M430 174 L430 188" class="line"/>
+  <rect x="90" y="192" width="680" height="54" class="box"/>
+  <text x="430.0" y="225" text-anchor="middle" class="label">Validate Alert</text>
+  <path d="M430 246 L430 260" class="line"/>
+  <rect x="90" y="264" width="680" height="54" class="box"/>
+  <text x="430.0" y="297" text-anchor="middle" class="label">Identify Affected Systems</text>
+  <path d="M430 318 L430 332" class="line"/>
+  <rect x="90" y="336" width="680" height="54" class="box"/>
+  <text x="430.0" y="369" text-anchor="middle" class="label">Determine Severity & Scope</text>
+  <path d="M430 390 L430 404" class="line"/>
+  <rect x="90" y="408" width="680" height="54" class="accent"/>
+  <text x="430.0" y="441" text-anchor="middle" class="label">Contain</text>
+  <path d="M430 462 L430 476" class="line"/>
+  <rect x="90" y="480" width="680" height="54" class="box"/>
+  <text x="430.0" y="513" text-anchor="middle" class="label">Investigate Root Cause</text>
+  <path d="M430 534 L430 548" class="line"/>
+  <rect x="90" y="552" width="680" height="54" class="accent"/>
+  <text x="430.0" y="585" text-anchor="middle" class="label">Remediate</text>
+  <path d="M430 606 L430 620" class="line"/>
+  <rect x="90" y="624" width="680" height="54" class="box"/>
+  <text x="430.0" y="657" text-anchor="middle" class="label">Recover Service</text>
+  <path d="M430 678 L430 692" class="line"/>
+  <rect x="90" y="696" width="680" height="54" class="accent"/>
+  <text x="430.0" y="729" text-anchor="middle" class="label">Validate Security & Stability</text>
+  <path d="M430 750 L430 764" class="line"/>
+  <rect x="90" y="768" width="680" height="54" class="box"/>
+  <text x="430.0" y="801" text-anchor="middle" class="label">Document Lessons Learned</text>
+  <rect x="90" y="855" width="680" height="58" class="pill"/>
+  <text x="430" y="880" text-anchor="middle" class="small">Use with service validation, evidence capture, and rollback-aware change handling</text>
+</svg>
