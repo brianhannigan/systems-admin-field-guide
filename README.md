@@ -45,15 +45,15 @@ This repository is designed for:
 Use this reading path to get the most value from the repository:
 
 1.  Systems Engineer Operational Model\
-2.  Real Infrastructure Scenarios\
-3.  Troubleshooting Playbooks\
-4.  Example Command Reference\
-5.  Security Incident Workflow\
-6.  Operational Metrics\
-7.  Infrastructure Architecture\
-8.  Case Studies\
-9.  Lab Walkthroughs\
-10. Systems Engineer Cheat Sheet
+2.  [Real Infrastructure Scenarios](docs/scenarios/README.md)\
+3.  [Troubleshooting Playbooks](docs/playbooks/README.md)\
+4.  [Example Command Reference](docs/reference/systems-engineer-command-reference.md)\
+5.  [Security Incident Workflow](docs/workflows/security-incident-workflow.md)\
+6.  [Operational Metrics](docs/metrics/engineering-metrics.md)\
+7.  [Infrastructure Architecture](docs/architecture/infrastructure-architecture-overview.md)\
+8.  [Case Studies](docs/case-studies/)\
+9.  [Lab Walkthroughs](docs/labs/README.md)\
+10. [Systems Engineer Cheat Sheet](docs/components/11-daily-30-minute-practice-routine.md)
 
 ------------------------------------------------------------------------
 
@@ -61,28 +61,28 @@ Use this reading path to get the most value from the repository:
 
 ### Operational Foundations
 
-• Systems Engineer Operational Model\
-• Change Validation Workflow\
-• Infrastructure Architecture Overview
+• [Systems Engineer Operational Model](docs/MASTER_OUTLINE.md)\
+• [Change Validation Workflow](docs/workflows/change-validation-workflow.md)\
+• [Infrastructure Architecture Overview](docs/architecture/infrastructure-architecture-overview.md)
 
 ### Real-World Operations
 
-• Real Infrastructure Scenarios\
-• Troubleshooting Playbooks\
-• Systems Engineer Command Reference
+• [Real Infrastructure Scenarios](docs/scenarios/README.md)\
+• [Troubleshooting Playbooks](docs/playbooks/README.md)\
+• [Systems Engineer Command Reference](docs/reference/systems-engineer-command-reference.md)
 
 ### Security and Compliance
 
-• Security Incident Workflow\
-• Engineering Metrics\
-• Operational Metrics Scorecard Template
+• [Security Incident Workflow](docs/workflows/security-incident-workflow.md)\
+• [Engineering Metrics](docs/metrics/engineering-metrics.md)\
+• [Operational Metrics Scorecard Template](docs/metrics/operational-metrics-scorecard-template.md)
 
 ### Portfolio Evidence
 
-• Case Studies\
-• Lab Walkthroughs\
-• Automation Script Documentation\
-• Systems Engineer Cheat Sheet
+• [Case Studies](docs/case-studies/)\
+• [Lab Walkthroughs](docs/labs/README.md)\
+• [Automation Script Documentation](docs/scripts/)\
+• [Systems Engineer Cheat Sheet](docs/components/11-daily-30-minute-practice-routine.md)
 
 ------------------------------------------------------------------------
 
@@ -161,13 +161,13 @@ That lifecycle is reinforced through:
 
 If you are evaluating this repository quickly, start with:
 
-• Systems Engineer Operational Model\
-• Security Incident Workflow\
-• Infrastructure Architecture Overview\
-• Azure VM Fails to Deploy scenario\
-• SSH Access Failure playbook\
-• STIG Remediation case study\
-• Terraform Deployment Standardization case study
+• [Systems Engineer Operational Model](docs/MASTER_OUTLINE.md)\
+• [Security Incident Workflow](docs/workflows/security-incident-workflow.md)\
+• [Infrastructure Architecture Overview](docs/architecture/infrastructure-architecture-overview.md)\
+• [Azure VM Fails to Deploy scenario](docs/scenarios/azure-vm-fails-to-deploy.md)\
+• [SSH Access Failure playbook](docs/playbooks/ssh-access-failure.md)\
+• [STIG Remediation case study](docs/case-studies/stig-remediation-project.md)\
+• [Terraform Deployment Standardization case study](docs/case-studies/terraform-deployment-standardization.md)
 
 ------------------------------------------------------------------------
 
@@ -211,7 +211,7 @@ Cybersecurity Engineer & Systems Architect
 
 GitHub: https://github.com/brianhannigan\
 Repository:
-https://github.com/brianhannigan/systems-engineer-field-guide
+https://github.com/brianhannigan/systems-admin-field-guide
 
 ------------------------------------------------------------------------
 
