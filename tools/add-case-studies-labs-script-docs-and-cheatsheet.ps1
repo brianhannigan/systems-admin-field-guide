@@ -27,8 +27,8 @@ function Ensure-Directory {
 
 function Ensure-File {
     param(
-        [string]$Path,
-        [string]$Content
+        [Parameter(Mandatory = $true)][string]$Path,
+        [Parameter(Mandatory = $true)][string]$Content
     )
 
     if ((Test-Path -LiteralPath $Path) -and -not $Force) {
@@ -47,9 +47,9 @@ function Ensure-File {
 
 function Upsert-ReadmeSection {
     param(
-        [string]$ReadmePath,
-        [string]$Header,
-        [string]$SectionContent
+        [Parameter(Mandatory = $true)][string]$ReadmePath,
+        [Parameter(Mandatory = $true)][string]$Header,
+        [Parameter(Mandatory = $true)][string]$SectionContent
     )
 
     $content = Get-Content -LiteralPath $ReadmePath -Raw
@@ -553,7 +553,6 @@ Write-Section "Complete"
 Write-Host "Case studies, labs, script docs, and cheat sheet added." -ForegroundColor Green
 Write-Host ""
 Write-Host "Next commands:" -ForegroundColor Yellow
-Write-Host "cd `"$RepoRoot`""
 Write-Host "git status"
 Write-Host "git add README.md docs tools"
 Write-Host "git commit -m `"docs: add case studies labs script docs and cheat sheet`""
