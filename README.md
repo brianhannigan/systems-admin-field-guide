@@ -167,26 +167,7 @@ CONTRIBUTING.md
 
 ## Featured Workflow Areas
 
-This field guide is organized around a practical systems engineering
-lifecycle:
-
-``` text
-Infrastructure Discovery
-        ↓
-Documentation
-        ↓
-Hardening & Compliance
-        ↓
-Automation
-        ↓
-Monitoring & Logging
-        ↓
-Vulnerability Remediation
-        ↓
-Validation & Continuous Improvement
-```
-
-That lifecycle is reinforced through:
+This field guide is organized around a practical systems engineering lifecycle:
 
 ```text
 Infrastructure Discovery
