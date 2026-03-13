@@ -6,22 +6,24 @@
 hostnamectl
 uname -a
 ip addr
+ip route
 ss -tulpn
 systemctl status <service>
 journalctl -u <service> -n 100
 df -h
 free -h
 top
+ps -ef
 ~~~
 
 ## Windows Quick Checks
 
 ~~~powershell
 Get-Service
-Get-EventLog -LogName System -Newest 50
 Get-Process | Sort-Object CPU -Descending | Select-Object -First 20
 Get-Volume
-Test-NetConnection
+Get-EventLog -LogName System -Newest 50
+Test-NetConnection <host> -Port 3389
 ~~~
 
 ## Azure Quick Commands
@@ -29,9 +31,9 @@ Test-NetConnection
 ~~~bash
 az login
 az account show
-az vm list -o table
 az group list -o table
-az resource list -o table
+az vm list -o table
+az vm show --resource-group <rg> --name <vm> -o json
 ~~~
 
 ## Terraform Quick Commands
@@ -42,17 +44,5 @@ terraform fmt
 terraform validate
 terraform plan
 terraform apply
-terraform show
 terraform state list
 ~~~
-
-## Troubleshooting Flow
-
-1. Confirm scope
-2. Confirm recent changes
-3. Check service health
-4. Check logs
-5. Check network reachability
-6. Validate dependencies
-7. Test fix
-8. Document outcome
