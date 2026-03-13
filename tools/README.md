@@ -8,3 +8,13 @@ These scripts support repo development, but they are intentionally separated fro
 - run builders intentionally
 - review file changes before commit
 - keep generated documentation aligned with real-world notes
+
+## How to Use This Guide
+
+Start with onboarding and reading order, then move through operations and labs.
+
+- docs/reference/systems-engineer-cheat-sheet.md
+- docs/scenarios
+- docs/playbooks
+- docs/metrics
+
